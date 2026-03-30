@@ -49,7 +49,7 @@ function HeroVisual() {
           <div className="grid grid-cols-3 gap-3 mb-4">
             {[
               { label: "Adherence", value: "83%", color: "#1E56A0" },
-              { label: "Patients", value: "247", color: "#171717" },
+              { label: "Patients", value: "247", color: "#0F2B57" },
               { label: "Alerts", value: "3", color: "#f59e0b" },
             ].map((s) => (
               <div key={s.label} className="bg-[#FAFAFA] rounded-lg p-3 text-center border border-[#E5E5E5]/40">
@@ -88,7 +88,7 @@ function HeroVisual() {
               <Cpu className="w-4 h-4 text-[#1E56A0]" />
             </div>
             <div>
-              <div className="text-xs font-semibold text-[#171717]">iLidRx Pod</div>
+              <div className="text-xs font-semibold text-[#0F2B57]">iLidRx Pod</div>
               <div className="text-[10px] text-[#10B981]">Dose dispensed</div>
             </div>
           </div>
@@ -103,13 +103,7 @@ export function Home() {
   const prefersReducedMotion = useReducedMotion();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
-  const [formData, setFormData] = useState({ name: "", email: "", organization: "", role: "", message: "" });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
+  // Form state removed — dedicated Contact page handles form submissions
 
   return (
     <div className="bg-white">
@@ -129,7 +123,7 @@ export function Home() {
                   Medication Adherence Platform
                 </p>
                 <h1
-                  className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] font-bold text-[#171717] leading-[1.1] tracking-[-0.02em] mb-5"
+                  className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] font-bold text-[#0F2B57] leading-[1.1] tracking-[-0.02em] mb-5"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   80%+ Medication Adherence. Clinically Proven.
@@ -172,14 +166,14 @@ export function Home() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="mt-12"
               >
-                <p className="text-sm text-[#A3A3A3] mb-3">
+                <p className="text-sm text-[#525252] mb-3">
                   Backed by federal research grants and validated at leading universities
                 </p>
                 <div className="flex flex-wrap items-center gap-6">
                   {["NIH", "Kent State", "Brown", "U of Michigan", "OCEAN"].map((name) => (
                     <span
                       key={name}
-                      className="text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] opacity-60 hover:opacity-100 transition-opacity"
+                      className="text-xs font-semibold uppercase tracking-wider text-[#525252] opacity-60 hover:opacity-100 transition-opacity"
                     >
                       {name}
                     </span>
@@ -202,7 +196,7 @@ export function Home() {
       </section>
 
       {/* ═══════ SECTION 2: THE PROBLEM (dark) ═══════ */}
-      <Section className="py-20 lg:py-28 bg-[#171717]">
+      <Section className="py-20 lg:py-28 bg-[#0F2B57]">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <FadeUp>
             <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#B3CCFF] mb-3">
@@ -243,7 +237,7 @@ export function Home() {
                       suffix={stat.number.includes("K") ? "K" : stat.number.includes("B") ? "B" : ""}
                     />
                   </div>
-                  <p className="text-xs text-[#A3A3A3] uppercase tracking-wider mt-2">{stat.label}</p>
+                  <p className="text-xs text-[#B0C4DE] uppercase tracking-wider mt-2">{stat.label}</p>
                   <p className="text-base text-[#D4D4D4] mt-3 leading-relaxed">{stat.description}</p>
                 </div>
               </FadeUp>
@@ -252,12 +246,12 @@ export function Home() {
 
           <FadeUp delay={0.4}>
             <div className="mt-12 max-w-2xl">
-              <p className="text-xl text-[#A3A3A3] leading-relaxed">
+              <p className="text-xl text-[#B0C4DE] leading-relaxed">
                 Despite decades of innovation — from pill organizers to smart caps to connected
                 pillboxes — no technology has meaningfully solved this problem.
               </p>
               <p className="text-white font-semibold mt-4">Until now.</p>
-              <p className="text-sm text-[#525252] mt-4">Source: Centers for Disease Control and Prevention</p>
+              <p className="text-sm text-[#8BA3C4] mt-4">Source: Centers for Disease Control and Prevention</p>
             </div>
           </FadeUp>
         </div>
@@ -271,7 +265,7 @@ export function Home() {
               How It Works
             </p>
             <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl mx-auto text-center"
+              className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl mx-auto text-center"
               style={{ fontFamily: "var(--font-display)" }}
             >
               From Pharmacy to Patient to Care Team — in Real Time
@@ -300,7 +294,7 @@ export function Home() {
                     <step.icon className="w-8 h-8 text-[#1E56A0] mx-auto" strokeWidth={1.5} />
                   </div>
                   {/* Text */}
-                  <h3 className="mt-4 font-semibold text-lg text-[#171717]" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="mt-4 font-semibold text-lg text-[#0F2B57]" style={{ fontFamily: "var(--font-display)" }}>
                     {step.title}
                   </h3>
                   <p className="mt-2 text-sm text-[#737373] max-w-[200px] mx-auto leading-relaxed">
@@ -334,7 +328,7 @@ export function Home() {
               The Platform
             </p>
             <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl"
+              className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Three Components. One Connected System.
@@ -376,7 +370,7 @@ export function Home() {
                   <div className="w-12 h-12 rounded-xl bg-[#EEF4FF] flex items-center justify-center">
                     <card.icon className="w-6 h-6 text-[#1E56A0]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-semibold text-xl text-[#171717] mt-4" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="font-semibold text-xl text-[#0F2B57] mt-4" style={{ fontFamily: "var(--font-display)" }}>
                     {card.title}
                   </h3>
                   <p className="text-base text-[#737373] mt-3 leading-relaxed">{card.desc}</p>
@@ -429,7 +423,7 @@ export function Home() {
               Why iRxReminder
             </p>
             <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl"
+              className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               The Technology Gap — And How We Close It
@@ -509,7 +503,7 @@ export function Home() {
                     competitor.highlight ? "bg-[#EEF4FF] border-[#1E56A0]/20" : "bg-white border-[#E5E5E5]/60"
                   }`}
                 >
-                  <h4 className={`font-semibold text-base mb-3 ${competitor.highlight ? "text-[#1E56A0]" : "text-[#171717]"}`}>
+                  <h4 className={`font-semibold text-base mb-3 ${competitor.highlight ? "text-[#1E56A0]" : "text-[#0F2B57]"}`}>
                     {competitor.name}
                   </h4>
                   <ul className="space-y-2">
@@ -547,7 +541,7 @@ export function Home() {
               Solutions
             </p>
             <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl"
+              className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Built for Your Challenge
@@ -643,7 +637,7 @@ export function Home() {
                         {content.eyebrow}
                       </p>
                       <h3
-                        className="font-bold text-2xl text-[#171717] leading-[1.2]"
+                        className="font-bold text-2xl text-[#0F2B57] leading-[1.2]"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {content.title}
@@ -691,7 +685,7 @@ export function Home() {
               Trusted by Researchers and Clinicians
             </p>
             <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl mx-auto text-center"
+              className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl mx-auto text-center"
               style={{ fontFamily: "var(--font-display)" }}
             >
               What Our Partners Say
@@ -741,7 +735,7 @@ export function Home() {
                       <span className="font-semibold text-sm text-[#1E56A0]">{t.initials}</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-[#171717]">{t.name}</p>
+                      <p className="font-semibold text-sm text-[#0F2B57]">{t.name}</p>
                       <p className="text-xs text-[#737373]">{t.role} &middot; {t.org}</p>
                     </div>
                   </div>
@@ -752,119 +746,59 @@ export function Home() {
         </div>
       </Section>
 
-      {/* ═══════ SECTION 9: CONTACT FORM ═══════ */}
+      {/* ═══════ SECTION 9: GET STARTED CTA ═══════ */}
       <Section id="contact" className="py-20 lg:py-28 bg-[#F5F5F5]">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
-          <FadeUp>
-            <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-3">
-              Get Started
-            </p>
-            <h2
-              className="font-bold text-4xl lg:text-[2.25rem] text-[#171717] leading-[1.2] tracking-[-0.01em] max-w-2xl"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              See iRxReminder in Action
-            </h2>
-            <p className="text-xl text-[#737373] mt-4 max-w-xl leading-relaxed">
-              Schedule a 15-minute personalized demo.
-            </p>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
-            {/* Form */}
-            <FadeUp delay={0.1}>
-              {formSubmitted ? (
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#E5E5E5]/60 text-center py-16">
-                  <div className="w-16 h-16 rounded-full bg-[#D1FAE5] flex items-center justify-center mx-auto mb-4">
-                    <Check className="w-8 h-8 text-[#10B981]" />
-                  </div>
-                  <h3 className="font-semibold text-xl text-[#171717]" style={{ fontFamily: "var(--font-display)" }}>
-                    Thanks! We&rsquo;ll be in touch.
-                  </h3>
-                  <p className="text-sm text-[#737373] mt-2">We&rsquo;ll respond within 1 business day.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className="bg-white rounded-2xl p-8 shadow-sm border border-[#E5E5E5]/60">
-                  <div className="space-y-4">
-                    {[
-                      { id: "name", label: "Full Name", type: "text", placeholder: "Jane Smith" },
-                      { id: "email", label: "Work Email", type: "email", placeholder: "jane@organization.com" },
-                      { id: "organization", label: "Organization", type: "text", placeholder: "Your organization" },
-                    ].map((field) => (
-                      <div key={field.id}>
-                        <label htmlFor={field.id} className="block text-sm font-medium text-[#404040] mb-1.5">
-                          {field.label}
-                        </label>
-                        <input
-                          id={field.id}
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          required
-                          value={formData[field.id as keyof typeof formData]}
-                          onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-[#FAFAFA] text-[#171717] placeholder:text-[#A3A3A3] focus:outline-none focus:ring-2 focus:ring-[#1E56A0]/20 focus:border-[#1E56A0] transition-colors"
-                        />
-                      </div>
-                    ))}
-
-                    <div>
-                      <label htmlFor="role" className="block text-sm font-medium text-[#404040] mb-1.5">
-                        Role
-                      </label>
-                      <select
-                        id="role"
-                        value={formData.role}
-                        onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-[#FAFAFA] text-[#171717] focus:outline-none focus:ring-2 focus:ring-[#1E56A0]/20 focus:border-[#1E56A0] transition-colors appearance-none"
-                      >
-                        <option value="">Select your role</option>
-                        <option>Healthcare Administrator</option>
-                        <option>Clinical Researcher</option>
-                        <option>Pharmaceutical</option>
-                        <option>Caregiver/Family</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-[#404040] mb-1.5">
-                        Message <span className="text-[#A3A3A3] font-normal">(optional)</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        rows={3}
-                        placeholder="Tell us about your use case"
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-[#FAFAFA] text-[#171717] placeholder:text-[#A3A3A3] focus:outline-none focus:ring-2 focus:ring-[#1E56A0]/20 focus:border-[#1E56A0] transition-colors resize-none"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full mt-6 bg-[#1E56A0] text-white py-3 rounded-xl font-semibold text-[0.9375rem] transition-colors hover:bg-[#163D7A] hover:shadow-md hover:shadow-[#1E56A0]/20 focus:ring-2 focus:ring-[#1E56A0] focus:ring-offset-2 focus-visible:outline-none"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: CTA */}
+            <FadeUp>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-3">
+                  Get Started
+                </p>
+                <h2
+                  className="font-bold text-4xl lg:text-[2.25rem] text-[#0F2B57] leading-[1.2] tracking-[-0.01em] max-w-2xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  See iRxReminder in Action
+                </h2>
+                <p className="text-xl text-[#737373] mt-4 max-w-xl leading-relaxed mb-8">
+                  Schedule a 15-minute personalized demo configured for your specific use case.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/schedule-pilot"
+                    className="inline-flex items-center justify-center gap-2 bg-[#1E56A0] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors hover:bg-[#163D7A] hover:shadow-md hover:shadow-[#1E56A0]/20 focus:ring-2 focus:ring-[#1E56A0] focus:ring-offset-2 focus-visible:outline-none"
                   >
-                    Request a Demo
-                  </button>
-                  <p className="text-xs text-[#A3A3A3] mt-3 text-center">
-                    We&rsquo;ll respond within 1 business day.
-                  </p>
-                </form>
-              )}
+                    Schedule a Pilot
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 border border-[#1E56A0]/20 text-[#1E56A0] px-7 py-3.5 rounded-xl font-semibold transition-colors hover:bg-[#1E56A0] hover:text-white focus:ring-2 focus:ring-[#1E56A0] focus:ring-offset-2 focus-visible:outline-none"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+                <p className="text-sm text-[#737373] mt-6">
+                  Prefer email?{" "}
+                  <a href="mailto:info@irxreminder.com" className="text-[#1E56A0] hover:underline">
+                    info@irxreminder.com
+                  </a>
+                </p>
+              </div>
             </FadeUp>
 
-            {/* What happens next */}
+            {/* Right: What happens next */}
             <FadeUp delay={0.2}>
-              <div>
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#E5E5E5]/60">
                 <h3
-                  className="font-semibold text-xl text-[#171717]"
+                  className="font-semibold text-xl text-[#0F2B57] mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   What happens next
                 </h3>
-
-                <div className="mt-8 space-y-6">
+                <div className="space-y-6">
                   {[
                     {
                       num: "1",
@@ -887,19 +821,12 @@ export function Home() {
                         {step.num}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#171717]">{step.title}</h4>
+                        <h4 className="font-semibold text-[#0F2B57]">{step.title}</h4>
                         <p className="text-sm text-[#737373] mt-1 leading-relaxed">{step.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                <p className="text-sm text-[#737373] mt-8">
-                  Prefer email? Contact us at{" "}
-                  <a href="mailto:info@irxreminder.com" className="text-[#1E56A0] hover:underline">
-                    info@irxreminder.com
-                  </a>
-                </p>
               </div>
             </FadeUp>
           </div>

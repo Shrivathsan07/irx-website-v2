@@ -175,10 +175,10 @@ export function Evidence() {
 
           {/* AMA Blockquote */}
           <FadeUp delay={0.1}>
-            <div className="relative bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] mb-16">
+            <div className="relative bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] mb-16">
               <Quote className="w-10 h-10 text-[#1E56A0]/20 absolute top-6 left-6" />
               <div className="pl-8 md:pl-12">
-                <blockquote className="text-xl md:text-2xl text-[#171717] italic leading-relaxed mb-4">
+                <blockquote className="text-xl md:text-2xl text-[#0F2B57] italic leading-relaxed mb-4">
                   &ldquo;Poor medication adherence takes the lives of 125,000
                   Americans annually, and costs the healthcare system as much
                   as $300 billion a year.&rdquo;
@@ -220,8 +220,8 @@ export function Evidence() {
               },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={0.15 + i * 0.08}>
-                <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full flex flex-col hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
-                  <h4 className="text-xl font-bold text-[#171717] mb-1">{item.title}</h4>
+                <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full flex flex-col hover:shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
+                  <h4 className="text-xl font-bold text-[#0F2B57] mb-1">{item.title}</h4>
                   <p className="text-sm text-[#737373] mb-5">{item.subtitle}</p>
                   <div className="flex items-start gap-2.5 mb-4">
                     <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
@@ -263,7 +263,7 @@ export function Evidence() {
           <div className="space-y-6">
             {/* TDtect Study */}
             <FadeUp>
-              <div className="bg-white p-8 md:p-10 rounded-2xl border-2 border-[#1E56A0]/30 shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)]">
+              <div className="bg-white p-8 md:p-10 rounded-2xl border-2 border-[#1E56A0]/30 shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)]">
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
@@ -271,7 +271,7 @@ export function Evidence() {
                   </span>
                   <span className="text-xs text-[#737373] font-medium">NIMH-Funded</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#171717] mb-3">TDtect&trade; Diagnostic Study</h3>
+                <h3 className="text-2xl font-bold text-[#0F2B57] mb-3">TDtect&trade; Diagnostic Study</h3>
                 <p className="text-[#404040] mb-6 max-w-3xl">
                   NIMH-funded study for Tardive Dyskinesia detection and remote
                   monitoring in behavioral health populations. First patients
@@ -285,7 +285,7 @@ export function Evidence() {
                   ].map((detail) => (
                     <div key={detail.label} className="bg-[#FAFAFA] px-5 py-4 rounded-xl">
                       <div className="text-xs font-semibold text-[#737373] uppercase tracking-wider mb-1">{detail.label}</div>
-                      <div className="text-sm font-bold text-[#171717]">{detail.value}</div>
+                      <div className="text-sm font-bold text-[#0F2B57]">{detail.value}</div>
                     </div>
                   ))}
                 </div>
@@ -294,17 +294,17 @@ export function Evidence() {
 
             {/* NIH Adherence Study */}
             <FadeUp delay={0.1}>
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
+              <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span className="inline-flex items-center gap-1.5 bg-blue-50 text-[#0F2B57] px-3 py-1 rounded-full text-xs font-semibold">
                     Completed
                   </span>
                   <span className="text-xs text-[#737373] font-medium">350+ Participants</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#171717] mb-3">NIH Adherence Improvement Study</h3>
+                <h3 className="text-2xl font-bold text-[#0F2B57] mb-3">NIH Adherence Improvement Study</h3>
                 <p className="text-[#404040] mb-6 max-w-3xl">
                   Multi-site study across behavioral health networks.
-                  Result: <strong className="text-[#171717]">48% to 80%+ medication adherence improvement</strong>.
+                  Result: <strong className="text-[#0F2B57]">48% to 80%+ medication adherence improvement</strong>.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
@@ -314,7 +314,7 @@ export function Evidence() {
                   ].map((detail) => (
                     <div key={detail.label} className="bg-[#FAFAFA] px-5 py-4 rounded-xl">
                       <div className="text-xs font-semibold text-[#737373] uppercase tracking-wider mb-1">{detail.label}</div>
-                      <div className="text-sm font-bold text-[#171717]">{detail.value}</div>
+                      <div className="text-sm font-bold text-[#0F2B57]">{detail.value}</div>
                     </div>
                   ))}
                 </div>
@@ -323,17 +323,17 @@ export function Evidence() {
 
             {/* UMich Cancer Center */}
             <FadeUp delay={0.15}>
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
+              <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span className="inline-flex items-center gap-1.5 bg-blue-50 text-[#0F2B57] px-3 py-1 rounded-full text-xs font-semibold">
                     Completed
                   </span>
                   <span className="text-xs text-[#737373] font-medium">HOPA-Funded</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#171717] mb-3">University of Michigan Cancer Center</h3>
+                <h3 className="text-2xl font-bold text-[#0F2B57] mb-3">University of Michigan Cancer Center</h3>
                 <p className="text-[#404040] mb-6 max-w-3xl">
                   Oncology adherence study.
-                  Result: <strong className="text-[#171717]">25% reduction in clinical trial dropouts</strong>.
+                  Result: <strong className="text-[#0F2B57]">25% reduction in clinical trial dropouts</strong>.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
@@ -343,7 +343,7 @@ export function Evidence() {
                   ].map((detail) => (
                     <div key={detail.label} className="bg-[#FAFAFA] px-5 py-4 rounded-xl">
                       <div className="text-xs font-semibold text-[#737373] uppercase tracking-wider mb-1">{detail.label}</div>
-                      <div className="text-sm font-bold text-[#171717]">{detail.value}</div>
+                      <div className="text-sm font-bold text-[#0F2B57]">{detail.value}</div>
                     </div>
                   ))}
                 </div>
@@ -352,12 +352,12 @@ export function Evidence() {
 
             {/* 83% Callout */}
             <FadeUp delay={0.2}>
-              <div className="relative bg-gradient-to-br from-[#171717] via-[#171717] to-[#0F2B57] p-8 md:p-10 rounded-2xl overflow-hidden">
+              <div className="relative bg-gradient-to-br from-[#071A38] via-[#0A1E3D] to-[#0F2B57] p-8 md:p-10 rounded-2xl overflow-hidden">
                 <div className="relative flex flex-col md:flex-row items-center gap-6">
                   <CountUp end={83} suffix="%" className="text-6xl md:text-7xl font-extrabold text-[#1E56A0] tracking-tight" style={{ fontFamily: "var(--font-display)" }} />
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Consistent Adherence Rate</h3>
-                    <p className="text-[#A3A3A3] max-w-xl">
+                    <p className="text-[#B0C4DE] max-w-xl">
                       Across multiple studies and diverse populations, iRxReminder
                       consistently achieves 83% medication adherence&nbsp;&mdash;
                       far exceeding industry benchmarks.
@@ -386,7 +386,7 @@ export function Evidence() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
+            <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
               <ComparisonChart
                 metrics={[
                   { label: "Medication Adherence", without: 48, withIrx: 83, format: "percentage" },
@@ -433,7 +433,7 @@ export function Evidence() {
 
       {/* ======= FDA CLEARANCE — Prominent section ======= */}
       <section className="relative py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#171717] to-[#0F2B57]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A38] via-[#0A1E3D] to-[#0F2B57]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
             <div className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-10 md:p-14">
@@ -441,7 +441,7 @@ export function Evidence() {
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
                 FDA Regulatory Pathway
               </h3>
-              <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-[#B0C4DE] max-w-2xl mx-auto leading-relaxed">
                 iRxReminder is an FDA-registered medical device pursuing 510(k)
                 Class II clearance. Led by Dr. Fred Ma, MD PhD&nbsp;&mdash;
                 1,200+ clinical trials and 200+ drugs/devices through FDA
@@ -470,11 +470,11 @@ export function Evidence() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             <FadeUp delay={0.1}>
-              <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
+              <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full hover:shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-[#0F2B57]/10 flex items-center justify-center mb-5">
                   <Award className="w-6 h-6 text-[#0F2B57]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#171717] mb-2">NIMH AI Telehealth Grant</h3>
+                <h3 className="text-xl font-bold text-[#0F2B57] mb-2">NIMH AI Telehealth Grant</h3>
                 <div className="text-3xl font-extrabold text-[#0F2B57] mb-4 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>$871,153</div>
                 <p className="text-sm text-[#737373] mb-4">
                   <strong className="text-[#404040]">Awarded:</strong> March 2023
@@ -487,11 +487,11 @@ export function Evidence() {
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
+              <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] h-full hover:shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-[#1E56A0]/10 flex items-center justify-center mb-5">
                   <Award className="w-6 h-6 text-[#1E56A0]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#171717] mb-2">NIH Grant No. 1R43AG033500</h3>
+                <h3 className="text-xl font-bold text-[#0F2B57] mb-2">NIH Grant No. 1R43AG033500</h3>
                 <p className="text-sm text-[#737373] mb-4">
                   <strong className="text-[#404040]">Focus:</strong> Stroke Recovery &amp; Aging
                 </p>
@@ -508,7 +508,7 @@ export function Evidence() {
               <div className="flex items-start gap-4">
                 <ShieldCheck className="w-6 h-6 text-[#1E56A0] flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-lg font-bold text-[#171717] mb-3">What NIH Funding Means</h3>
+                  <h3 className="text-lg font-bold text-[#0F2B57] mb-3">What NIH Funding Means</h3>
                   <p className="text-[#404040] text-sm leading-relaxed">
                     NIH grants undergo rigorous peer review for scientific merit,
                     innovation, and public health impact. Federal funding validates
@@ -547,11 +547,11 @@ export function Evidence() {
               { name: "Butler Hospital", description: "Brown-affiliated psychiatric hospital — clinical site for adherence trials with 350+ participants.", color: "#1E56A0" },
             ].map((partner, i) => (
               <FadeUp key={partner.name} delay={i * 0.06}>
-                <div className="bg-white p-6 md:p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <div className="bg-white p-6 md:p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 h-full flex flex-col">
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${partner.color}10` }}>
                     <GraduationCap className="w-6 h-6" style={{ color: partner.color }} />
                   </div>
-                  <div className="font-bold text-[#171717] text-center mb-2">{partner.name}</div>
+                  <div className="font-bold text-[#0F2B57] text-center mb-2">{partner.name}</div>
                   <p className="text-xs text-[#737373] text-center leading-relaxed">{partner.description}</p>
                 </div>
               </FadeUp>
@@ -634,7 +634,7 @@ export function Evidence() {
                     href={pub.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block bg-white p-8 rounded-2xl border-l-4 border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 cursor-pointer group"
+                    className="block bg-white p-8 rounded-2xl border-l-4 border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.06),0_8px_20px_rgba(30,86,160,0.1),0_24px_48px_rgba(30,58,138,0.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 cursor-pointer group"
                     style={{ borderLeftColor: pub.color }}
                   >
                     <div className="flex items-start gap-4">
@@ -642,7 +642,7 @@ export function Evidence() {
                         <FileText className="w-5 h-5" style={{ color: pub.color }} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-[#171717] mb-1 group-hover:text-[#1E56A0] transition-colors">{pub.title}</h3>
+                        <h3 className="font-bold text-[#0F2B57] mb-1 group-hover:text-[#1E56A0] transition-colors">{pub.title}</h3>
                         <p className="text-sm text-[#1E56A0] font-medium mb-1">{pub.authors}</p>
                         <p className="text-sm text-[#737373] mb-3">{pub.journal} &bull; {pub.date}</p>
                         <p className="text-sm text-[#404040] leading-relaxed">{pub.description}</p>
@@ -652,7 +652,7 @@ export function Evidence() {
                   </a>
                 ) : (
                   <div
-                    className="bg-white p-8 rounded-2xl border-l-4 border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]"
+                    className="bg-white p-8 rounded-2xl border-l-4 border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)]"
                     style={{ borderLeftColor: pub.color }}
                   >
                     <div className="flex items-start gap-4">
@@ -660,7 +660,7 @@ export function Evidence() {
                         <FileText className="w-5 h-5" style={{ color: pub.color }} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-[#171717] mb-1">{pub.title}</h3>
+                        <h3 className="font-bold text-[#0F2B57] mb-1">{pub.title}</h3>
                         <p className="text-sm text-[#1E56A0] font-medium mb-1">{pub.authors}</p>
                         <p className="text-sm text-[#737373] mb-3">{pub.journal} &bull; {pub.date}</p>
                         <p className="text-sm text-[#404040] leading-relaxed">{pub.description}</p>
@@ -687,8 +687,8 @@ export function Evidence() {
 
           {/* Research Impact */}
           <FadeUp delay={0.2}>
-            <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
-              <h4 className="font-bold text-[#171717] mb-6">Research Impact</h4>
+            <div className="bg-white p-8 rounded-2xl border border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,86,160,0.04),0_4px_12px_rgba(30,86,160,0.06),0_16px_40px_rgba(30,58,138,0.06)]">
+              <h4 className="font-bold text-[#0F2B57] mb-6">Research Impact</h4>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 {[
                   { end: 33, label: "Publications", color: "#0F2B57" },
@@ -781,19 +781,19 @@ export function Evidence() {
 
       {/* ======= CTA ======= */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#171717] to-[#0F2B57]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A38] via-[#0A1E3D] to-[#0F2B57]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               The Evidence Speaks for Itself
             </h2>
-            <p className="text-xl text-[#A3A3A3] mb-6">
+            <p className="text-xl text-[#B0C4DE] mb-6">
               See how clinically validated technology can transform adherence for your patients
             </p>
           </FadeUp>
           <FadeUp delay={0.1}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] transition-[background-color,box-shadow]">
+              <Button asChild size="lg" className="bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(30,86,160,0.3),0_6px_20px_rgba(30,86,160,0.25)] transition-[background-color,box-shadow]">
                 <Link to="/schedule-pilot">
                   Schedule a Pilot
                   <ArrowRight className="w-4 h-4 ml-2" />

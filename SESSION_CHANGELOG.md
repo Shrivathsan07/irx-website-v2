@@ -142,3 +142,60 @@ Complete visual rebuild following `iRx_Website_Redesign_Full_UI_Spec.md` — mig
 - Visual QA: run dev server and inspect each page at all breakpoints
 - Delete unused components: GrainTexture.tsx, SectionDivider.tsx
 - If product images arrive: replace placeholders across Platform, Home
+
+---
+
+## 2026-03-30 — Session 4: Comprehensive Audit — Color, Contrast, ROI, Cleanup
+
+### What was done
+
+**1. Replaced all black (#171717) with dark navy blue**
+- Systematic replacement across 22 source files + theme.css
+- Background sections: `bg-[#171717]` → `bg-[#0F2B57]`
+- Gradient backgrounds: `from-[#171717] via-[#171717] to-[#0F2B57]` → `from-[#071A38] via-[#0A1E3D] to-[#0F2B57]` (proper dark navy gradient, not flat)
+- Text colors on light backgrounds: `text-[#171717]` → `text-[#0F2B57]`
+- Footer border: `border-[#262626]` → `border-white/10`
+- Zero `#171717` remains in codebase
+
+**2. Fixed text visibility and WCAG AA contrast**
+- Dark backgrounds (`#0F2B57`): created new palette — `#B0C4DE` (body, 7.6:1), `#8BA3C4` (secondary, 5.3:1), `#7A9BC0` (tertiary, 4.6:1)
+- Replaced all `text-[#A3A3A3]`, `text-[#737373]`, `text-[#525252]` on dark backgrounds
+- Light backgrounds (`#EEF4FF`): hero social proof `#A3A3A3` → `#525252` (7.33:1)
+- All combinations verified WCAG AA compliant
+
+**3. ROI Calculator — added Recharts bar chart**
+- Added Revenue vs Cost vs Net Profit bar chart visualization
+- Uses Recharts BarChart with branded colors (#1E56A0, #D4D4D4, #10B981)
+- Removed unused `Lock` import
+
+**4. Removed repetitive content**
+- Replaced full contact form on Home page (duplicated Contact page) with streamlined CTA section
+- Dual CTAs: "Schedule a Pilot" → `/schedule-pilot`, "Contact Us" → `/contact`
+- Added "What happens next" steps card for clarity
+- Removed unused form state variables
+
+**5. Bug fixes and cleanup**
+- Replaced 17 occurrences of old teal shadow tint `rgba(8,145,178,...)` → `rgba(30,86,160,...)` in Evidence, About, News, Contact
+- Deleted unused components: GrainTexture.tsx, SectionDivider.tsx
+- Verified About page CTA routes are correct
+
+### Files changed (24 files modified, 2 deleted)
+**Modified:**
+- `src/styles/theme.css`
+- `src/app/components/Footer.tsx`, `SplitHero.tsx`, `SectionWrapper.tsx`, `SectionHeader.tsx`, `Navigation.tsx`, `LogoTicker.tsx`, `StatCard.tsx`, `ComparisonChart.tsx`, `FloatingBadge.tsx`, `BentoGrid.tsx`, `TimelineTrack.tsx`
+- `src/app/components/ui/accordion.tsx`
+- `src/app/pages/Home.tsx`, `Evidence.tsx`, `About.tsx`, `Platform.tsx`, `Solutions.tsx`, `ROICalculator.tsx`, `Contact.tsx`, `News.tsx`, `NewsArticle.tsx`, `SchedulePilot.tsx`
+
+**Deleted:**
+- `src/app/components/GrainTexture.tsx`
+- `src/app/components/SectionDivider.tsx`
+
+### Build status
+- `npm run build` passes clean (0 errors)
+- JS: 1,168 KB (gzip 336 KB), CSS: 85 KB (gzip 13 KB)
+
+### What to do next session
+- Visual QA at all breakpoints (mobile, tablet, desktop)
+- If product images arrive: replace placeholders
+- If FDA 510(k) is granted: update all "Pathway" → "Cleared" references
+- Consider code-splitting to reduce main chunk size

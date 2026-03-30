@@ -12,7 +12,7 @@ export function SectionWrapper({ children, bg = "white", className = "", id }: S
     "white": "bg-white",
     "neutral-50": "bg-[#FAFAFA]",
     "neutral-100": "bg-[#F5F5F5]",
-    "neutral-900": "bg-[#171717]",
+    "neutral-900": "bg-[#0F2B57]",
     "brand-500": "bg-[#1E56A0]",
   };
 

@@ -19,13 +19,13 @@ export function SectionHeader({ label, title, subtitle, align = "left", variant 
           {label}
         </p>
         <h2
-          className={`font-display text-4xl lg:text-[2.25rem] font-bold leading-[1.2] tracking-[-0.01em] max-w-2xl ${isCenter ? "mx-auto" : ""} ${isDark ? "text-white" : "text-[#171717]"}`}
+          className={`font-display text-4xl lg:text-[2.25rem] font-bold leading-[1.2] tracking-[-0.01em] max-w-2xl ${isCenter ? "mx-auto" : ""} ${isDark ? "text-white" : "text-[#0F2B57]"}`}
           style={{ fontFamily: "var(--font-display)" }}
         >
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-xl leading-relaxed mt-4 max-w-xl ${isCenter ? "mx-auto" : ""} ${isDark ? "text-[#A3A3A3]" : "text-[#737373]"}`}>
+          <p className={`text-xl leading-relaxed mt-4 max-w-xl ${isCenter ? "mx-auto" : ""} ${isDark ? "text-[#B0C4DE]" : "text-[#737373]"}`}>
             {subtitle}
           </p>
         )}

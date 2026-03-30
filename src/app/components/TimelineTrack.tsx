@@ -80,7 +80,7 @@ function VerticalTimeline({
                   <div className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-1">
                     {item.label}
                   </div>
-                  <h3 className="text-lg font-bold text-[#171717] mb-1.5">
+                  <h3 className="text-lg font-bold text-[#0F2B57] mb-1.5">
                     {item.title}
                   </h3>
                   <p className="text-sm text-[#737373] leading-relaxed">
@@ -179,7 +179,7 @@ function HorizontalTimeline({
                   <div className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-1">
                     {item.label}
                   </div>
-                  <h4 className="font-bold text-[#171717] mb-1.5">{item.title}</h4>
+                  <h4 className="font-bold text-[#0F2B57] mb-1.5">{item.title}</h4>
                   <p className="text-sm text-[#737373] leading-relaxed">{item.description}</p>
                 </div>
               </FadeUp>

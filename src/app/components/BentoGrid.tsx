@@ -63,7 +63,7 @@ export function BentoGrid({ items, className = "" }: BentoGridProps) {
                 </div>
               )}
 
-              <h3 className="text-xl font-bold text-[#171717] mb-3 tracking-tight">
+              <h3 className="text-xl font-bold text-[#0F2B57] mb-3 tracking-tight">
                 {item.title}
               </h3>
               <p className="text-[#737373] leading-relaxed text-[15px]">

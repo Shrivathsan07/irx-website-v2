@@ -33,7 +33,7 @@ export function FloatingBadge({
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold ${
         isGlass
           ? "bg-white/[0.05] backdrop-blur-sm border border-white/10 text-white"
-          : "bg-white border border-[#E5E5E5]/60 text-[#171717] shadow-sm"
+          : "bg-white border border-[#E5E5E5]/60 text-[#0F2B57] shadow-sm"
       }`}
     >
       <Icon className="w-4 h-4 text-[#1E56A0]" />

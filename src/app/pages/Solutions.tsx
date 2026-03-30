@@ -93,7 +93,7 @@ function UseCaseVisual() {
                 <item.icon className="w-4 h-4" style={{ color: item.color }} />
               </div>
               <div className="flex-1">
-                <div className="text-sm font-semibold text-[#171717]">
+                <div className="text-sm font-semibold text-[#0F2B57]">
                   {item.label}
                 </div>
               </div>
@@ -212,7 +212,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -235,7 +235,7 @@ export function Solutions() {
                 <div className="bg-gradient-to-br from-[#FAFAFA] to-[#EEF4FF] p-7 rounded-2xl border border-[#0F2B57]/10">
                   <div className="flex items-center gap-2 mb-2">
                     <Beaker className="w-4 h-4 text-[#0F2B57]" />
-                    <h4 className="font-semibold text-[#171717] text-sm">
+                    <h4 className="font-semibold text-[#0F2B57] text-sm">
                       Featured Study
                     </h4>
                   </div>
@@ -362,7 +362,7 @@ export function Solutions() {
                     <div className="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center">
                       <AlertTriangle className="w-4 h-4 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-[#171717]">The Reality</h4>
+                    <h4 className="font-bold text-[#0F2B57]">The Reality</h4>
                   </div>
                   <p className="text-[#404040] leading-relaxed">
                     Your clients leave inpatient care stabilized. Within weeks,
@@ -380,7 +380,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -405,7 +405,7 @@ export function Solutions() {
                     <div className="w-9 h-9 rounded-lg bg-[#0F2B57]/10 flex items-center justify-center">
                       <FileCheck className="w-4 h-4 text-[#0F2B57]" />
                     </div>
-                    <h4 className="font-bold text-[#171717]">
+                    <h4 className="font-bold text-[#0F2B57]">
                       Clinical Evidence
                     </h4>
                   </div>
@@ -517,7 +517,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -540,7 +540,7 @@ export function Solutions() {
                 <div className="bg-gradient-to-br from-[#F5F5F5] to-[#EEF4FF] p-7 rounded-2xl border border-[#1E56A0]/10">
                   <div className="flex items-center gap-2 mb-2">
                     <Clock className="w-4 h-4 text-[#1E56A0]" />
-                    <h4 className="font-semibold text-[#171717] text-sm">
+                    <h4 className="font-semibold text-[#0F2B57] text-sm">
                       Simple Integration
                     </h4>
                   </div>
@@ -641,7 +641,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -664,7 +664,7 @@ export function Solutions() {
                 <div className="bg-gradient-to-br from-[#FAFAFA] to-[#EEF4FF] p-7 rounded-2xl border border-[#0F2B57]/10">
                   <div className="flex items-center gap-2 mb-2">
                     <Shield className="w-4 h-4 text-[#0F2B57]" />
-                    <h4 className="font-semibold text-[#171717] text-sm">
+                    <h4 className="font-semibold text-[#0F2B57] text-sm">
                       Compliance
                     </h4>
                   </div>
@@ -827,7 +827,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -933,7 +933,7 @@ export function Solutions() {
                       "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-[#171717] mb-4">
+                  <h4 className="font-bold text-[#0F2B57] mb-4">
                     How iRxReminder Helps
                   </h4>
                   <ul className="text-[#404040] space-y-2.5 leading-relaxed">
@@ -1129,7 +1129,7 @@ export function Solutions() {
                     />
                   </div>
                   <div
-                    className="font-bold text-lg text-[#171717] mb-3"
+                    className="font-bold text-lg text-[#0F2B57] mb-3"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {persona.title}

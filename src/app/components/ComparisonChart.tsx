@@ -58,11 +58,11 @@ export function ComparisonChart({
       <div className="flex items-center gap-6 text-sm">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-sm bg-[#D4D4D4]" />
-          <span className={`font-medium ${isGlass ? "text-[#A3A3A3]" : "text-[#737373]"}`}>{withoutLabel}</span>
+          <span className={`font-medium ${isGlass ? "text-[#B0C4DE]" : "text-[#737373]"}`}>{withoutLabel}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-sm bg-[#1E56A0]" />
-          <span className={`font-semibold ${isGlass ? "text-white" : "text-[#171717]"}`}>{withLabel}</span>
+          <span className={`font-semibold ${isGlass ? "text-white" : "text-[#0F2B57]"}`}>{withLabel}</span>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ export function ComparisonChart({
 
         return (
           <div key={metric.label} className="space-y-3">
-            <div className={`text-sm font-semibold ${isGlass ? "text-white" : "text-[#171717]"}`}>{metric.label}</div>
+            <div className={`text-sm font-semibold ${isGlass ? "text-white" : "text-[#0F2B57]"}`}>{metric.label}</div>
             <div className="space-y-2">
               {/* Without bar */}
               <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export function ComparisonChart({
                       transitionDuration: prefersReducedMotion ? "0ms" : `${600 + i * 150}ms`,
                     }}
                   >
-                    <span className={`text-xs font-bold whitespace-nowrap ${isGlass ? "text-[#A3A3A3]" : "text-[#525252]"}`}>
+                    <span className={`text-xs font-bold whitespace-nowrap ${isGlass ? "text-[#B0C4DE]" : "text-[#525252]"}`}>
                       {formatValue(metric.without, metric.format)}
                     </span>
                   </div>

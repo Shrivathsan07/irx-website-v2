@@ -63,30 +63,30 @@ export function SplitHero({
   const isDark = variant === "dark";
 
   return (
-    <section className={isDark ? "bg-[#171717]" : "bg-[#EEF4FF]"}>
+    <section className={isDark ? "bg-[#0F2B57]" : "bg-[#EEF4FF]"}>
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-24 md:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text */}
           <div>
             <motion.div {...heroAnim}>
-              <p className={`font-semibold text-xs tracking-[0.05em] uppercase mb-6 ${isDark ? "text-[#A3A3A3]" : "text-[#1E56A0]"}`}>
+              <p className={`font-semibold text-xs tracking-[0.05em] uppercase mb-6 ${isDark ? "text-[#B0C4DE]" : "text-[#1E56A0]"}`}>
                 {label}
               </p>
               <h1
-                className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.02em] leading-[1.08] ${tagline ? "mb-3" : "mb-6"} ${isDark ? "text-white" : "text-[#171717]"}`}
+                className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.02em] leading-[1.08] ${tagline ? "mb-3" : "mb-6"} ${isDark ? "text-white" : "text-[#0F2B57]"}`}
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {headline}
               </h1>
               {tagline && (
                 <p
-                  className={`text-xl sm:text-2xl font-bold tracking-[-0.01em] mb-6 ${isDark ? "text-[#A3A3A3]" : "text-[#1E56A0]"}`}
+                  className={`text-xl sm:text-2xl font-bold tracking-[-0.01em] mb-6 ${isDark ? "text-[#B0C4DE]" : "text-[#1E56A0]"}`}
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {tagline}
                 </p>
               )}
-              <p className={`text-xl leading-relaxed mb-10 max-w-xl ${isDark ? "text-[#A3A3A3]" : "text-[#737373]"}`}>
+              <p className={`text-xl leading-relaxed mb-10 max-w-xl ${isDark ? "text-[#B0C4DE]" : "text-[#737373]"}`}>
                 {subtitle}
               </p>
             </motion.div>
@@ -125,7 +125,7 @@ export function SplitHero({
             {trustItems && trustItems.length > 0 && (
               <motion.div
                 {...fadeAnim}
-                className={`mt-14 flex flex-wrap items-center gap-6 text-sm ${isDark ? "text-[#A3A3A3]" : "text-[#737373]"}`}
+                className={`mt-14 flex flex-wrap items-center gap-6 text-sm ${isDark ? "text-[#B0C4DE]" : "text-[#737373]"}`}
               >
                 {trustItems.map((item, i) => (
                   <span key={i} className="flex items-center gap-2">
