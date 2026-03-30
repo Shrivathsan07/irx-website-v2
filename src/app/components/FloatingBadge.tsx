@@ -5,7 +5,6 @@ import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 interface FloatingBadgeProps {
   icon: React.ElementType;
   text: string;
-  /** "glass" for dark backgrounds, "elevated" for light */
   variant?: "glass" | "elevated";
 }
 
@@ -30,20 +29,19 @@ export function FloatingBadge({
             ? { opacity: 1, scale: 1 }
             : { opacity: 0, scale: 0.9 }
       }
-      transition={{ duration: 0.4, type: "spring", stiffness: 400, damping: 25 }}
+      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold ${
         isGlass
-          ? "bg-white/[0.12] backdrop-blur-md border border-white/20 text-white"
-          : "bg-white border border-gray-100 text-gray-800 shadow-[0_1px_3px_rgba(8,145,178,0.06),0_4px_12px_rgba(8,145,178,0.08)]"
+          ? "bg-white/[0.05] backdrop-blur-sm border border-white/10 text-white"
+          : "bg-white border border-[#E5E5E5]/60 text-[#171717] shadow-sm"
       }`}
     >
-      <Icon className="w-4 h-4 text-[#0891b2]" />
+      <Icon className="w-4 h-4 text-[#1E56A0]" />
       {text}
     </motion.div>
   );
 }
 
-/** Group of floating badges with stagger */
 export function FloatingBadgeGroup({
   badges,
   variant = "elevated",

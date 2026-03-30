@@ -45,7 +45,7 @@ function VerticalTimeline({
       {/* Animated connecting line */}
       <div className="absolute left-[23px] top-0 bottom-0 w-px hidden md:block">
         <div
-          className="w-full bg-gradient-to-b from-[#0891b2]/50 via-[#1e3a8a]/30 to-transparent transition-[height] ease-out"
+          className="w-full bg-gradient-to-b from-[#1E56A0]/50 via-[#1E56A0]/20 to-transparent transition-[height] ease-out"
           style={{
             height: isInView ? "100%" : "0%",
             transitionDuration: prefersReducedMotion ? "0ms" : "1500ms",
@@ -55,7 +55,7 @@ function VerticalTimeline({
 
       <div className="space-y-8">
         {items.map((item, i) => {
-          const color = item.color || (i % 2 === 0 ? "#1e3a8a" : "#0891b2");
+          const color = item.color || (i % 2 === 0 ? "#1E56A0" : "#163D7A");
           const Icon = item.icon;
 
           return (
@@ -77,13 +77,13 @@ function VerticalTimeline({
                   </div>
                 </div>
                 <div className="flex-1 pt-1">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-1">
                     {item.label}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1.5">
+                  <h3 className="text-lg font-bold text-[#171717] mb-1.5">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-[#737373] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -124,9 +124,9 @@ function HorizontalTimeline({
       <div className="hidden md:block">
         {/* Connecting line */}
         <div className="relative mx-16 mb-8">
-          <div className="h-px bg-gray-200 w-full" />
+          <div className="h-px bg-[#E5E5E5] w-full" />
           <div
-            className="absolute top-0 left-0 h-px bg-gradient-to-r from-[#0891b2] to-[#1e3a8a] transition-[width] ease-out"
+            className="absolute top-0 left-0 h-px bg-gradient-to-r from-[#1E56A0] to-[#163D7A] transition-[width] ease-out"
             style={{
               width: `${lineWidth}%`,
               transitionDuration: prefersReducedMotion ? "0ms" : "1200ms",
@@ -135,7 +135,7 @@ function HorizontalTimeline({
           {/* Nodes on the line */}
           <div className="absolute inset-0 flex justify-between -top-2.5">
             {items.map((item, i) => {
-              const color = item.color || (i % 2 === 0 ? "#1e3a8a" : "#0891b2");
+              const color = item.color || (i % 2 === 0 ? "#1E56A0" : "#163D7A");
               return (
                 <motion.div
                   key={`node-${i}`}
@@ -149,9 +149,8 @@ function HorizontalTimeline({
                   }
                   transition={{
                     delay: 0.3 + i * 0.15,
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 20,
+                    duration: 0.4,
+                    ease: [0.25, 0.1, 0.25, 1],
                   }}
                   className="w-5 h-5 rounded-full border-[3px] border-white"
                   style={{ backgroundColor: color, boxShadow: `0 0 0 2px ${color}4d` }}
@@ -164,7 +163,7 @@ function HorizontalTimeline({
         {/* Labels */}
         <div className="grid" style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}>
           {items.map((item, i) => {
-            const color = item.color || (i % 2 === 0 ? "#1e3a8a" : "#0891b2");
+            const color = item.color || (i % 2 === 0 ? "#1E56A0" : "#163D7A");
             const Icon = item.icon;
             return (
               <FadeUp key={`label-${i}`} delay={0.3 + i * 0.1}>
@@ -177,11 +176,11 @@ function HorizontalTimeline({
                       <Icon className="w-5 h-5" style={{ color }} />
                     </div>
                   )}
-                  <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-1">
                     {item.label}
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-1.5">{item.title}</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                  <h4 className="font-bold text-[#171717] mb-1.5">{item.title}</h4>
+                  <p className="text-sm text-[#737373] leading-relaxed">{item.description}</p>
                 </div>
               </FadeUp>
             );

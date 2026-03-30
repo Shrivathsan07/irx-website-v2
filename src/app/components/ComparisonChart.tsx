@@ -57,12 +57,12 @@ export function ComparisonChart({
       {/* Legend */}
       <div className="flex items-center gap-6 text-sm">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-sm bg-gray-300" />
-          <span className={`font-medium ${isGlass ? "text-blue-200" : "text-gray-500"}`}>{withoutLabel}</span>
+          <div className="w-3 h-3 rounded-sm bg-[#D4D4D4]" />
+          <span className={`font-medium ${isGlass ? "text-[#A3A3A3]" : "text-[#737373]"}`}>{withoutLabel}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-sm bg-gradient-to-r from-[#0891b2] to-[#06a7ce]" />
-          <span className={`font-semibold ${isGlass ? "text-white" : "text-gray-700"}`}>{withLabel}</span>
+          <div className="w-3 h-3 rounded-sm bg-[#1E56A0]" />
+          <span className={`font-semibold ${isGlass ? "text-white" : "text-[#171717]"}`}>{withLabel}</span>
         </div>
       </div>
 
@@ -73,19 +73,19 @@ export function ComparisonChart({
 
         return (
           <div key={metric.label} className="space-y-3">
-            <div className={`text-sm font-semibold ${isGlass ? "text-white" : "text-gray-700"}`}>{metric.label}</div>
+            <div className={`text-sm font-semibold ${isGlass ? "text-white" : "text-[#171717]"}`}>{metric.label}</div>
             <div className="space-y-2">
               {/* Without bar */}
               <div className="flex items-center gap-3">
-                <div className={`flex-1 h-10 rounded-lg overflow-hidden ${isGlass ? "bg-white/10" : "bg-gray-100"}`}>
+                <div className={`flex-1 h-10 rounded-lg overflow-hidden ${isGlass ? "bg-white/10" : "bg-[#F5F5F5]"}`}>
                   <div
-                    className={`h-full rounded-lg transition-[width] ease-out flex items-center justify-end pr-3 ${isGlass ? "bg-white/20" : "bg-gray-300"}`}
+                    className={`h-full rounded-lg transition-[width] ease-out flex items-center justify-end pr-3 ${isGlass ? "bg-white/20" : "bg-[#D4D4D4]"}`}
                     style={{
                       width: animated ? `${withoutWidth}%` : "0%",
                       transitionDuration: prefersReducedMotion ? "0ms" : `${600 + i * 150}ms`,
                     }}
                   >
-                    <span className={`text-xs font-bold whitespace-nowrap ${isGlass ? "text-blue-200" : "text-gray-600"}`}>
+                    <span className={`text-xs font-bold whitespace-nowrap ${isGlass ? "text-[#A3A3A3]" : "text-[#525252]"}`}>
                       {formatValue(metric.without, metric.format)}
                     </span>
                   </div>
@@ -93,9 +93,9 @@ export function ComparisonChart({
               </div>
               {/* With bar */}
               <div className="flex items-center gap-3">
-                <div className={`flex-1 h-10 rounded-lg overflow-hidden ${isGlass ? "bg-[#0891b2]/10" : "bg-[#0891b2]/5"}`}>
+                <div className={`flex-1 h-10 rounded-lg overflow-hidden ${isGlass ? "bg-[#1E56A0]/10" : "bg-[#1E56A0]/5"}`}>
                   <div
-                    className="h-full bg-gradient-to-r from-[#0891b2] to-[#06a7ce] rounded-lg transition-[width] ease-out flex items-center justify-end pr-3"
+                    className="h-full bg-[#1E56A0] rounded-lg transition-[width] ease-out flex items-center justify-end pr-3"
                     style={{
                       width: animated ? `${withWidth}%` : "0%",
                       transitionDuration: prefersReducedMotion ? "0ms" : `${800 + i * 150}ms`,

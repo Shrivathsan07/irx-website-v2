@@ -16,7 +16,6 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { motion } from "motion/react";
 import { FadeUp } from "@/app/components/animations";
-import { GrainTexture } from "@/app/components/GrainTexture";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 import { FloatingBadgeGroup } from "@/app/components/FloatingBadge";
 
@@ -35,7 +34,7 @@ export function ROICalculator() {
     : {
         initial: { opacity: 0, y: 30 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.6 },
+        transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
       };
 
   const [patientCount, setPatientCount] = useState(500);
@@ -86,29 +85,26 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
 
   return (
     <div className="bg-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1d3d] via-[#152c6e] to-[#1e3a8a]" />
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#0891b2]/15 rounded-full blur-[100px]" />
-        <GrainTexture opacity={0.04} />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      {/* Hero — Light */}
+      <section className="bg-[#EEF4FF]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 py-24 text-center">
           <motion.div {...heroAnimation}>
-            <p className="text-[#0891b2] font-semibold text-sm tracking-widest uppercase mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-4">
               ROI Calculator
             </p>
             <h1
-              className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight"
+              className="text-4xl md:text-5xl font-bold text-[#171717] mb-3 tracking-[-0.02em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Your Path to Reimbursable Remote Care
             </h1>
             <p
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0891b2] tracking-tight mb-6"
+              className="text-xl sm:text-2xl font-bold text-[#1E56A0] tracking-[-0.01em] mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Calculate Your ROI
             </p>
-            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#737373] max-w-2xl mx-auto">
               See how much reimbursable revenue your health system could
               generate with iRxReminder
             </p>
@@ -118,20 +114,14 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
 
       {/* Calculator — Split Layout */}
       <section className="py-16 -mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <FadeUp>
-            <div
-              className="bg-white rounded-2xl p-8 md:p-12 border border-gray-100"
-              style={{
-                boxShadow:
-                  "0 1px 3px rgba(30,58,138,0.06), 0 8px 24px rgba(30,58,138,0.08), 0 24px 48px rgba(30,58,138,0.06)",
-              }}
-            >
+            <div className="bg-white rounded-2xl p-8 md:p-12 border border-[#E5E5E5]/60 shadow-lg shadow-[#171717]/5">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Left: Input Controls */}
                 <div>
                   <h2
-                    className="text-2xl font-bold text-[#1e3a8a] mb-8 tracking-tight"
+                    className="text-2xl font-bold text-[#171717] mb-8 tracking-[-0.01em]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     Adjust Your Parameters
@@ -148,7 +138,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                           Number of Patients
                         </Label>
                         <span
-                          className="text-2xl font-extrabold text-[#1e3a8a] tracking-tight"
+                          className="text-2xl font-bold text-[#0F2B57] tracking-tight"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {patientCount.toLocaleString()}
@@ -163,7 +153,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                         onValueChange={(value) => setPatientCount(value[0])}
                         className="mb-2"
                       />
-                      <div className="flex justify-between text-xs text-gray-500">
+                      <div className="flex justify-between text-xs text-[#737373]">
                         <span>10</span>
                         <span>1,000</span>
                       </div>
@@ -179,7 +169,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                           Monitoring Duration
                         </Label>
                         <span
-                          className="text-2xl font-extrabold text-[#0891b2] tracking-tight"
+                          className="text-2xl font-bold text-[#1E56A0] tracking-tight"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {duration} {duration === 1 ? "month" : "months"}
@@ -194,7 +184,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                         onValueChange={(value) => setDuration(value[0])}
                         className="mb-2"
                       />
-                      <div className="flex justify-between text-xs text-gray-500">
+                      <div className="flex justify-between text-xs text-[#737373]">
                         <span>1 month</span>
                         <span>12 months</span>
                       </div>
@@ -210,7 +200,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                       </Label>
                       <div className="flex items-center gap-4">
                         <div className="relative flex-1 max-w-xs">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#737373]">
                             $
                           </span>
                           <Input
@@ -223,7 +213,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                             className="pl-7"
                           />
                         </div>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-[#737373]">
                           Based on typical RPM/RTM billing codes
                           ($120&ndash;$150)
                         </p>
@@ -240,7 +230,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                       </Label>
                       <div className="flex items-center gap-4">
                         <div className="relative flex-1 max-w-xs">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#737373]">
                             $
                           </span>
                           <Input
@@ -253,7 +243,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                             className="pl-7"
                           />
                         </div>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-[#737373]">
                           Platform + device cost
                         </p>
                       </div>
@@ -264,24 +254,18 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                 {/* Right: Live Results */}
                 <div className="flex flex-col">
                   {/* Hero stat — Net Profit */}
-                  <div
-                    className="relative rounded-2xl p-8 overflow-hidden mb-6"
-                    style={{
-                      background: "linear-gradient(135deg, #0f1d3d 0%, #152c6e 50%, #1e3a8a 100%)",
-                    }}
-                  >
-                    <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#0891b2]/15 rounded-full blur-[60px]" />
+                  <div className="relative rounded-2xl p-8 overflow-hidden mb-6 bg-[#171717]">
                     <div className="relative">
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#0891b2] mb-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#B3CCFF] mb-2">
                         Projected Net Profit
                       </p>
                       <p
-                        className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-1"
+                        className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-1"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {formatCurrency(netProfit)}
                       </p>
-                      <p className="text-sm text-blue-200">
+                      <p className="text-sm text-[#A3A3A3]">
                         over {duration} month{duration > 1 ? "s" : ""} &middot; {patientCount.toLocaleString()} patients
                       </p>
                     </div>
@@ -290,14 +274,14 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                   {/* Breakdown rows */}
                   <div className="space-y-3">
                     {[
-                      { label: "Reimbursable Revenue", value: formatCurrency(totalRevenue), color: "#0891b2", bgClass: "bg-[#0891b2]/5 border-[#0891b2]/10" },
-                      { label: "Program Cost", value: formatCurrency(totalCost), color: "#64748b", bgClass: "bg-gray-50 border-gray-100" },
+                      { label: "Reimbursable Revenue", value: formatCurrency(totalRevenue), color: "#1E56A0", bgClass: "bg-[#EEF4FF] border-[#D9E5FF]" },
+                      { label: "Program Cost", value: formatCurrency(totalCost), color: "#737373", bgClass: "bg-[#FAFAFA] border-[#E5E5E5]" },
                     ].map((item) => (
                       <div
                         key={item.label}
                         className={`flex items-center justify-between px-5 py-3.5 rounded-xl border ${item.bgClass}`}
                       >
-                        <span className="text-sm font-medium text-gray-600">{item.label}</span>
+                        <span className="text-sm font-medium text-[#404040]">{item.label}</span>
                         <span
                           className="text-xl font-bold tracking-tight"
                           style={{ color: item.color, fontFamily: "var(--font-display)" }}
@@ -309,23 +293,23 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
 
                     {/* ROI + Payback row */}
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="flex flex-col items-center justify-center px-4 py-4 rounded-xl bg-[#0891b2]/5 border border-[#0891b2]/10">
+                      <div className="flex flex-col items-center justify-center px-4 py-4 rounded-xl bg-[#EEF4FF] border border-[#D9E5FF]">
                         <span
-                          className="text-2xl font-extrabold tracking-tight text-[#0891b2]"
+                          className="text-2xl font-bold tracking-tight text-[#1E56A0]"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {roiMultiplier}&times;
                         </span>
-                        <span className="text-xs font-medium text-gray-500 mt-1">ROI Multiplier</span>
+                        <span className="text-xs font-medium text-[#737373] mt-1">ROI Multiplier</span>
                       </div>
-                      <div className="flex flex-col items-center justify-center px-4 py-4 rounded-xl bg-[#059669]/5 border border-[#059669]/10">
+                      <div className="flex flex-col items-center justify-center px-4 py-4 rounded-xl bg-[#D1FAE5]/30 border border-[#10B981]/20">
                         <span
-                          className="text-2xl font-extrabold tracking-tight text-[#059669]"
+                          className="text-2xl font-bold tracking-tight text-[#059669]"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {paybackMonths > 0 ? `~${paybackMonths} mo` : "Instant"}
                         </span>
-                        <span className="text-xs font-medium text-gray-500 mt-1">Payback Period</span>
+                        <span className="text-xs font-medium text-[#737373] mt-1">Payback Period</span>
                       </div>
                     </div>
                   </div>
@@ -346,14 +330,14 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                     <Button
                       onClick={generateReportEmail}
                       variant="outline"
-                      className="flex-1 border-gray-200 hover:border-[#0891b2] hover:bg-[#0891b2]/5 text-gray-700 hover:text-[#0891b2] transition-colors"
+                      className="flex-1 border-[#E5E5E5] hover:border-[#1E56A0] hover:bg-[#EEF4FF] text-[#404040] hover:text-[#1E56A0] transition-colors"
                     >
                       <Mail className="w-4 h-4 mr-2" />
                       Email This Report
                     </Button>
                     <Button
                       asChild
-                      className="flex-1 bg-[#0891b2] hover:bg-[#0e7490] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                      className="flex-1 bg-[#1E56A0] hover:bg-[#163D7A] text-white transition-colors hover:shadow-md hover:shadow-[#1E56A0]/20"
                     >
                       <Link to="/schedule-pilot">
                         Schedule a Pilot
@@ -369,11 +353,11 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
       </section>
 
       {/* Why Choose */}
-      <section className="py-24 bg-[#f8fafc]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-[#FAFAFA]">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <FadeUp>
             <h2
-              className="text-3xl font-bold text-[#1e3a8a] mb-10 text-center tracking-tight"
+              className="text-3xl font-bold text-[#171717] mb-10 text-center tracking-[-0.01em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Why Health Systems Choose iRxReminder
@@ -386,13 +370,13 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                 icon: CheckCircle2,
                 title: "Proven Clinical Outcomes",
                 desc: "NIH-funded studies demonstrate 48% to 80%+ improvement in medication adherence, reducing readmissions and improving patient safety.",
-                color: "#1e3a8a",
+                color: "#0F2B57",
               },
               {
                 icon: Settings,
                 title: "Seamless Workflow",
                 desc: "100% EHR integration means care teams get real-time adherence data without changing workflows. Pharmacy-loaded pods eliminate setup complexity.",
-                color: "#0891b2",
+                color: "#1E56A0",
               },
               {
                 icon: DollarSign,
@@ -402,13 +386,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
               },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 0.08}>
-                <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100 h-full"
-                  style={{
-                    boxShadow:
-                      "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)",
-                  }}
-                >
+                <div className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60 h-full hover:shadow-lg hover:shadow-[#1E56A0]/5 transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5">
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                     style={{ backgroundColor: `${item.color}1a` }}
@@ -418,10 +396,10 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                       style={{ color: item.color }}
                     />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">
+                  <h3 className="font-bold text-[#171717] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-[#737373] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -435,7 +413,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-[#1e3a8a]/20 text-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white transition-colors"
+                className="border-[#1E56A0]/20 text-[#1E56A0] hover:bg-[#1E56A0] hover:text-white transition-colors"
               >
                 <Link to="/evidence">View Clinical Validation</Link>
               </Button>
@@ -445,60 +423,31 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1d3d] via-[#152c6e] to-[#1e3a8a]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#0891b2]/15 rounded-full blur-[80px]" />
-        <GrainTexture opacity={0.04} />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-[#1E56A0] py-16">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
           <FadeUp>
             <h2
-              className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight"
+              className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-[-0.01em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Ready to Start Your Pilot Program?
             </h2>
-            <p className="text-xl text-blue-200 mb-8">
+            <p className="text-xl text-white/80 mb-8">
               Let&rsquo;s discuss how iRxReminder can deliver measurable
               outcomes for your health system
             </p>
-            <FloatingBadgeGroup
-              variant="glass"
-              className="justify-center mb-10"
-              badges={[
-                // TODO: Update to "FDA 510(k) Cleared" once clearance is granted
-                { icon: Shield, text: "FDA 510(k) Pathway" },
-                { icon: Lock, text: "HIPAA Compliant" },
-              ]}
-            />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#0891b2] hover:bg-[#0e7490] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] transition-[background-color,box-shadow]"
+                className="bg-white text-[#1E56A0] hover:bg-[#F5F5F5] transition-colors"
               >
                 <Link to="/schedule-pilot">
                   Schedule a Pilot
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/80 bg-white/5 hover:border-white hover:bg-white/15 text-white transition-colors"
-              >
-                <Link to="/roi-calculator">Recalculate ROI</Link>
-              </Button>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              Or call us at{" "}
-              <a
-                href="tel:3308068675"
-                className="font-semibold hover:text-white transition-colors"
-              >
-                330.806.8675
-              </a>
-            </p>
           </FadeUp>
         </div>
       </section>

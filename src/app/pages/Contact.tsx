@@ -11,12 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
-import { Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp, Lock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeUp } from "@/app/components/animations";
-import { GrainTexture } from "@/app/components/GrainTexture";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
-import { FloatingBadgeGroup } from "@/app/components/FloatingBadge";
 
 interface ContactFormData {
   name: string;
@@ -46,21 +44,18 @@ export function Contact() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1d3d] via-[#152c6e] to-[#1e3a8a]" />
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#0891b2]/15 rounded-full blur-[100px]" />
-        <GrainTexture opacity={0.04} />
+      <section className="relative overflow-hidden bg-[#EEF4FF]">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <motion.div {...heroAnimation}>
-            <p className="text-[#0891b2] font-semibold text-sm tracking-widest uppercase mb-4">
+            <p className="text-[#1E56A0] font-semibold text-sm tracking-widest uppercase mb-4">
               Contact
             </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#0F2B57] mb-6 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               Let&rsquo;s Talk About Better
               <br />
-              <span className="text-[#0891b2]">Medication Outcomes</span>
+              <span className="text-[#1E56A0]">Medication Outcomes</span>
             </h1>
-            <p className="text-xl text-blue-200">
+            <p className="text-xl text-[#737373]">
               Get in touch with our team to learn more about iRxReminder
             </p>
           </motion.div>
@@ -188,19 +183,10 @@ export function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                    className="w-full bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
                   >
                     Submit
                   </Button>
-                  <div className="mt-4">
-                    <FloatingBadgeGroup
-                      badges={[
-                        { icon: Shield, text: "FDA Cleared" },
-                        { icon: Lock, text: "HIPAA Compliant" },
-                        { icon: CheckCircle2, text: "SOC 2 Type II" },
-                      ]}
-                    />
-                  </div>
                 </form>
               </FadeUp>
             </div>
@@ -208,46 +194,46 @@ export function Contact() {
             {/* Sidebar */}
             <div className="space-y-6">
               <FadeUp delay={0.1}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-4">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
+                  <h3 className="font-bold text-[#171717] mb-4">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 text-[#0891b2] mt-0.5" />
+                      <Phone className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-[#171717]">
                           Phone
                         </div>
                         <a
                           href="tel:3308068675"
-                          className="text-sm text-gray-500 hover:text-[#0891b2] transition-colors"
+                          className="text-sm text-[#737373] hover:text-[#1E56A0] transition-colors"
                         >
                           330.806.8675
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Mail className="w-5 h-5 text-[#0891b2] mt-0.5" />
+                      <Mail className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-[#171717]">
                           General Inquiries
                         </div>
                         <a
                           href="mailto:info@irxreminder.com"
-                          className="text-sm text-gray-500 hover:text-[#0891b2] transition-colors"
+                          className="text-sm text-[#737373] hover:text-[#1E56A0] transition-colors"
                         >
                           info@irxreminder.com
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-[#0891b2] mt-0.5" />
+                      <MapPin className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-[#171717]">
                           Address
                         </div>
-                        <address className="text-sm text-gray-500 not-italic">
+                        <address className="text-sm text-[#737373] not-italic">
                           1768 E 25th St #308
                           <br />
                           Cleveland, OH 44114
@@ -259,44 +245,44 @@ export function Contact() {
               </FadeUp>
 
               <FadeUp delay={0.15}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-4">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
+                  <h3 className="font-bold text-[#171717] mb-4">
                     Direct Contacts
                   </h3>
                   <div className="space-y-4 text-sm">
                     <div>
-                      <div className="font-medium text-gray-900">
+                      <div className="font-medium text-[#171717]">
                         Sales &amp; Partnerships
                       </div>
                       <a
                         href="mailto:ltusick@irxreminder.com"
-                        className="text-[#0891b2] hover:text-[#0e7490] transition-colors"
+                        className="text-[#1E56A0] hover:text-[#163D7A] transition-colors"
                       >
                         Larry Tusick, CBO
                         <br />
                         ltusick@irxreminder.com
                       </a>
                     </div>
-                    <div className="pt-3 border-t border-gray-200">
-                      <div className="font-medium text-gray-900">
+                    <div className="pt-3 border-t border-[#E5E5E5]">
+                      <div className="font-medium text-[#171717]">
                         Management / Investment
                       </div>
                       <a
                         href="mailto:asterns@irxreminder.com"
-                        className="text-[#0891b2] hover:text-[#0e7490] transition-colors"
+                        className="text-[#1E56A0] hover:text-[#163D7A] transition-colors"
                       >
                         Anthony Sterns, PhD, CEO
                         <br />
                         asterns@irxreminder.com
                       </a>
                     </div>
-                    <div className="pt-3 border-t border-gray-200">
-                      <div className="font-medium text-gray-900">
+                    <div className="pt-3 border-t border-[#E5E5E5]">
+                      <div className="font-medium text-[#171717]">
                         Operations / FDA
                       </div>
                       <a
                         href="mailto:fma@irxreminder.com"
-                        className="text-[#0891b2] hover:text-[#0e7490] transition-colors"
+                        className="text-[#1E56A0] hover:text-[#163D7A] transition-colors"
                       >
                         Fred Ma, MD PhD, COO
                         <br />
@@ -308,11 +294,11 @@ export function Contact() {
               </FadeUp>
 
               <FadeUp delay={0.2}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-2">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
+                  <h3 className="font-bold text-[#171717] mb-2">
                     Business Hours
                   </h3>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-[#737373]">
                     Monday - Friday: 9:00 AM - 5:00 PM EST
                   </p>
                 </div>
@@ -323,27 +309,27 @@ export function Contact() {
                 <div className="space-y-3">
                   <Link
                     to="/schedule-pilot"
-                    className="flex items-center justify-between p-4 bg-[#0891b2]/5 rounded-xl border border-[#0891b2]/10 hover:border-[#0891b2]/30 transition-colors group"
+                    className="flex items-center justify-between p-4 bg-[#1E56A0]/5 rounded-xl border border-[#1E56A0]/10 hover:border-[#1E56A0]/30 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <Shield className="w-5 h-5 text-[#0891b2]" />
-                      <span className="font-medium text-gray-900 text-sm">
+                      <Shield className="w-5 h-5 text-[#1E56A0]" />
+                      <span className="font-medium text-[#171717] text-sm">
                         Schedule a Pilot
                       </span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#0891b2] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#1E56A0] group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     to="/roi-calculator"
-                    className="flex items-center justify-between p-4 bg-[#1e3a8a]/5 rounded-xl border border-[#1e3a8a]/10 hover:border-[#1e3a8a]/30 transition-colors group"
+                    className="flex items-center justify-between p-4 bg-[#0F2B57]/5 rounded-xl border border-[#0F2B57]/10 hover:border-[#0F2B57]/30 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <TrendingUp className="w-5 h-5 text-[#1e3a8a]" />
-                      <span className="font-medium text-gray-900 text-sm">
+                      <TrendingUp className="w-5 h-5 text-[#0F2B57]" />
+                      <span className="font-medium text-[#171717] text-sm">
                         Calculate Your ROI
                       </span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#1e3a8a] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#0F2B57] group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </FadeUp>

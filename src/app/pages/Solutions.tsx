@@ -26,11 +26,7 @@ import {
   AccordionContent,
 } from "../components/ui/accordion";
 import { FadeUp } from "@/app/components/animations";
-import { GrainTexture } from "@/app/components/GrainTexture";
 import { SplitHero } from "@/app/components/SplitHero";
-import { BentoGrid } from "@/app/components/BentoGrid";
-import { SectionDivider } from "@/app/components/SectionDivider";
-import { FloatingBadgeGroup } from "@/app/components/FloatingBadge";
 import { useSectionObserver } from "@/app/hooks/useSectionObserver";
 
 /* ─── Use Case Visual for Light Hero ─── */
@@ -38,13 +34,13 @@ function UseCaseVisual() {
   return (
     <div className="relative">
       <div
-        className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8"
+        className="bg-white rounded-2xl border border-[#E5E5E5] p-6 md:p-8"
         style={{
           boxShadow:
-            "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.08), 0 16px 40px rgba(30,58,138,0.10)",
+            "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.08), 0 16px 40px rgba(15,43,87,0.10)",
         }}
       >
-        <div className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">
+        <div className="text-xs font-semibold uppercase tracking-widest text-[#737373] mb-5">
           Configured For
         </div>
         <div className="space-y-3">
@@ -52,43 +48,43 @@ function UseCaseVisual() {
             {
               icon: FlaskConical,
               label: "Clinical Research",
-              color: "#1e3a8a",
+              color: "#0F2B57",
               stat: "25% fewer dropouts",
             },
             {
               icon: Activity,
               label: "Behavioral Health",
-              color: "#0891b2",
+              color: "#1E56A0",
               stat: "83% adherence",
             },
             {
               icon: Pill,
               label: "Pharmacies",
-              color: "#0891b2",
+              color: "#1E56A0",
               stat: "90-day retention",
             },
             {
               icon: Building2,
               label: "Health Systems",
-              color: "#1e3a8a",
+              color: "#0F2B57",
               stat: "3x cost recovery",
             },
             {
               icon: Heart,
               label: "Senior Living",
-              color: "#0891b2",
+              color: "#1E56A0",
               stat: "Zero sorting errors",
             },
             {
               icon: BarChart3,
               label: "Health Plans",
-              color: "#1e3a8a",
+              color: "#0F2B57",
               stat: "Verified data",
             },
           ].map((item) => (
             <div
               key={item.label}
-              className="flex items-center gap-4 p-3 rounded-xl bg-[#f8fafc] border border-gray-100"
+              className="flex items-center gap-4 p-3 rounded-xl bg-[#FAFAFA] border border-[#E5E5E5]/60"
             >
               <div
                 className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -97,7 +93,7 @@ function UseCaseVisual() {
                 <item.icon className="w-4 h-4" style={{ color: item.color }} />
               </div>
               <div className="flex-1">
-                <div className="text-sm font-semibold text-gray-900">
+                <div className="text-sm font-semibold text-[#171717]">
                   {item.label}
                 </div>
               </div>
@@ -141,8 +137,8 @@ export function Solutions() {
       />
 
       {/* Sticky Sub-Navigation */}
-      <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_3px_rgba(30,58,138,0.04)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(15,43,87,0.04)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-3 gap-6 text-sm font-medium scrollbar-hide">
             {[
               { href: "#research", id: "research", label: "Clinical Research" },
@@ -157,8 +153,8 @@ export function Solutions() {
                 href={item.href}
                 className={`whitespace-nowrap transition-colors pb-2 border-b-2 ${
                   activeSection === item.id
-                    ? "text-[#0891b2] border-[#0891b2] font-semibold"
-                    : "text-gray-500 hover:text-[#0891b2] border-transparent"
+                    ? "text-[#1E56A0] border-[#1E56A0] font-semibold"
+                    : "text-[#737373] hover:text-[#1E56A0] border-transparent"
                 }`}
               >
                 {item.label}
@@ -168,107 +164,27 @@ export function Solutions() {
         </div>
       </div>
 
-      {/* ═══ Use Case Overview — BentoGrid ═══ */}
-      <section className="py-24 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeUp>
-            <div className="text-center mb-14">
-              <p className="text-[#0891b2] font-semibold text-sm tracking-widest uppercase mb-4">
-                Use Cases
-              </p>
-              <h2
-                className="text-3xl md:text-4xl font-bold text-[#1e3a8a] tracking-tight"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                One Platform, Multiple Applications
-              </h2>
-              <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-                Every deployment is configured for your specific operational
-                context.
-              </p>
-            </div>
-          </FadeUp>
 
-          <BentoGrid
-            items={[
-              {
-                icon: FlaskConical,
-                title: "Clinical Research",
-                description:
-                  "Track every dose event in real time. Reduce participant dropouts by 25%. Export compliance data for regulatory submissions.",
-                span: "large",
-                stat: "25%",
-                color: "#1e3a8a",
-                href: "#research",
-              },
-              {
-                icon: Activity,
-                title: "Behavioral Health & Relapse Prevention",
-                description:
-                  "See non-adherence the day it starts. Intervene before crisis. Achieve 83% adherence for psychiatric medications including OUD and SMI populations.",
-                stat: "83%",
-                color: "#0891b2",
-                href: "#mental-health",
-              },
-              {
-                icon: Pill,
-                title: "Pharmacies",
-                description:
-                  "Patient retention via 90-day pod fills. Real medication use data, not just fill data. Technology competitors can't match.",
-                color: "#0891b2",
-                href: "#pharmacies",
-              },
-              {
-                icon: Building2,
-                title: "Health Systems",
-                description:
-                  "Post-discharge monitoring in real time. Reduce readmission penalties. 3x cost recovery via RPM/RTM billing codes.",
-                color: "#1e3a8a",
-                href: "#health-systems",
-              },
-              {
-                icon: Heart,
-                title: "Senior Living & Home Health",
-                description:
-                  "Eliminate staff sorting errors. Replace paper MAR sheets with verified digital documentation. Protect your license.",
-                color: "#0891b2",
-                href: "#senior-living",
-              },
-              {
-                icon: BarChart3,
-                title: "Health Plans & Payers",
-                description:
-                  "Verified adherence data replaces unreliable self-reports. Better risk models. $300B+ annual non-adherence cost opportunity.",
-                stat: "$300B+",
-                color: "#1e3a8a",
-                href: "#underwriters",
-              },
-            ]}
-          />
-        </div>
-      </section>
-
-      <SectionDivider fromColor="#f8fafc" toColor="#ffffff" direction="right" />
 
       {/* ═══ SECTION 1: CLINICAL RESEARCH ═══ */}
       <section
         id="research"
         className="py-24 md:py-32 bg-white scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <FadeUp>
               <div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1e3a8a]/10">
-                  <FlaskConical className="w-7 h-7 text-[#1e3a8a]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0F2B57]/10">
+                  <FlaskConical className="w-7 h-7 text-[#0F2B57]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Finish Studies on Time, on Budget, with Data You Can Trust
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-[#404040] leading-relaxed mb-6">
                   You&rsquo;ve designed a clean protocol. But 30% of
                   participants drop out unannounced. The ones who stay may not
                   be taking their medication on schedule. You&rsquo;re
@@ -276,12 +192,12 @@ export function Solutions() {
                   happened.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#0891b2] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#1E56A0] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   25%
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   fewer clinical trial dropouts (University of Michigan)
                 </p>
               </div>
@@ -290,16 +206,16 @@ export function Solutions() {
             <div className="space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Track every dose event in real time. See exactly who\u2019s following protocol.",
                       "Intervene with the 20% who need help instead of bothering the 80% who don\u2019t.",
@@ -307,7 +223,7 @@ export function Solutions() {
                       "ESmCapture surveys for patient-reported outcomes.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -316,26 +232,43 @@ export function Solutions() {
               </FadeUp>
 
               <FadeUp delay={0.15}>
-                <div className="bg-gradient-to-br from-[#f8fafc] to-[#eef5ff] p-7 rounded-2xl border border-[#1e3a8a]/10">
+                <div className="bg-gradient-to-br from-[#FAFAFA] to-[#EEF4FF] p-7 rounded-2xl border border-[#0F2B57]/10">
                   <div className="flex items-center gap-2 mb-2">
-                    <Beaker className="w-4 h-4 text-[#1e3a8a]" />
-                    <h4 className="font-semibold text-gray-900 text-sm">
+                    <Beaker className="w-4 h-4 text-[#0F2B57]" />
+                    <h4 className="font-semibold text-[#171717] text-sm">
                       Featured Study
                     </h4>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-[#404040] text-sm leading-relaxed">
                     HOPA-funded oncology study at University of Michigan Cancer
                     Center: 25% reduction in trial dropouts using iRxReminder.
                   </p>
                 </div>
               </FadeUp>
 
+              <FadeUp delay={0.18}>
+                <Link
+                  to="/schedule-pilot"
+                  className="flex items-center justify-between p-5 bg-[#1E56A0]/5 rounded-xl border border-[#1E56A0]/15 hover:border-[#1E56A0]/30 transition-colors group"
+                >
+                  <div>
+                    <span className="font-semibold text-[#0F2B57] block">
+                      Configure a Research Pilot
+                    </span>
+                    <span className="text-sm text-[#737373]">
+                      See how iRxReminder integrates with your study protocol
+                    </span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-[#1E56A0] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </FadeUp>
+
               <FadeUp delay={0.2}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06)",
                   }}
                 >
                   <Accordion type="multiple">
@@ -393,7 +326,7 @@ export function Solutions() {
                         </ul>
                         <Link
                           to="/roi-calculator"
-                          className="inline-flex items-center gap-2 text-[#0891b2] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
+                          className="inline-flex items-center gap-2 text-[#1E56A0] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
                         >
                           Calculate your ROI{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -408,31 +341,30 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#ffffff" toColor="#f8fafc" direction="left" />
 
       {/* ═══ SECTION 2: BEHAVIORAL HEALTH ═══ */}
       <section
         id="mental-health"
-        className="py-24 md:py-32 bg-[#f8fafc] scroll-mt-32"
+        className="py-24 md:py-32 bg-[#FAFAFA] scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="order-2 lg:order-1 space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center">
                       <AlertTriangle className="w-4 h-4 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-gray-900">The Reality</h4>
+                    <h4 className="font-bold text-[#171717]">The Reality</h4>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-[#404040] leading-relaxed">
                     Your clients leave inpatient care stabilized. Within weeks,
                     many stop taking medications. You find out when
                     they&rsquo;re back in crisis&nbsp;&mdash; not before.
@@ -442,16 +374,16 @@ export function Solutions() {
 
               <FadeUp delay={0.15}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Real-time dose tracking. See non-adherence the day it starts.",
                       "Intervene early. Avoid the crisis. Keep staff focused on care.",
@@ -459,7 +391,7 @@ export function Solutions() {
                       "3x ROI via RPM/RTM billing codes. Patient monitoring is a billable event.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -468,54 +400,71 @@ export function Solutions() {
               </FadeUp>
 
               <FadeUp delay={0.2}>
-                <div className="bg-gradient-to-br from-[#f8fafc] to-[#eef5ff] p-7 rounded-2xl border border-[#1e3a8a]/10">
+                <div className="bg-gradient-to-br from-[#FAFAFA] to-[#EEF4FF] p-7 rounded-2xl border border-[#0F2B57]/10">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-9 h-9 rounded-lg bg-[#1e3a8a]/10 flex items-center justify-center">
-                      <FileCheck className="w-4 h-4 text-[#1e3a8a]" />
+                    <div className="w-9 h-9 rounded-lg bg-[#0F2B57]/10 flex items-center justify-center">
+                      <FileCheck className="w-4 h-4 text-[#0F2B57]" />
                     </div>
-                    <h4 className="font-bold text-gray-900">
+                    <h4 className="font-bold text-[#171717]">
                       Clinical Evidence
                     </h4>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-[#404040] leading-relaxed">
                     NIH-funded trial across 350+ participants in behavioral
                     health networks:{" "}
-                    <strong className="text-[#1e3a8a]">
+                    <strong className="text-[#0F2B57]">
                       48% &rarr; 80%+ adherence improvement
                     </strong>
                   </p>
                 </div>
               </FadeUp>
+
+              <FadeUp delay={0.25}>
+                <Link
+                  to="/schedule-pilot"
+                  className="flex items-center justify-between p-5 bg-[#1E56A0]/5 rounded-xl border border-[#1E56A0]/15 hover:border-[#1E56A0]/30 transition-colors group"
+                >
+                  <div>
+                    <span className="font-semibold text-[#0F2B57] block">
+                      Schedule a Behavioral Health Pilot
+                    </span>
+                    <span className="text-sm text-[#737373]">
+                      Purpose-built for OUD and SMI populations
+                    </span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-[#1E56A0] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </FadeUp>
             </div>
 
             <div className="order-1 lg:order-2">
               <FadeUp>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0891b2]/10">
-                  <Activity className="w-7 h-7 text-[#0891b2]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1E56A0]/10">
+                  <Activity className="w-7 h-7 text-[#1E56A0]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Behavioral Health &amp; Relapse Prevention
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-4">
+                <p className="text-xl text-[#404040] leading-relaxed mb-4">
                   Non-compliant patients are more likely to require
                   hospitalization, incarceration, or crisis support. Your staff
                   burns out managing emergencies that could have been prevented.
                 </p>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-[#404040] leading-relaxed mb-6">
                   Critical for OUD (opioid use disorder) and SMI (serious mental illness) populations where medication
                   adherence is the difference between stability and relapse. A $9.1B market
                   spanning 2,500+ behavioral health agencies and 14,000+ treatment centers.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#0891b2] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#1E56A0] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   83%
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   adherence rate for psychiatric medications
                 </p>
               </FadeUp>
@@ -524,37 +473,36 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#f8fafc" toColor="#ffffff" direction="right" />
 
       {/* ═══ SECTION 3: PHARMACIES ═══ */}
       <section
         id="pharmacies"
         className="py-24 md:py-32 bg-white scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <FadeUp>
               <div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0891b2]/10">
-                  <Pill className="w-7 h-7 text-[#0891b2]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1E56A0]/10">
+                  <Pill className="w-7 h-7 text-[#1E56A0]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Differentiate with Technology Your Competitors Can&rsquo;t Match
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-[#404040] leading-relaxed mb-6">
                   You fill prescriptions, but what happens after the patient
                   leaves? You have no visibility. iRxReminder changes that.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#0891b2] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#1E56A0] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   90-day
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   patient retention via pod refill cycles
                 </p>
               </div>
@@ -563,16 +511,16 @@ export function Solutions() {
             <div className="space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Patient retention: Pods require 90-day fills at your pharmacy.",
                       "Real medication use data \u2014 not just fill data.",
@@ -580,7 +528,7 @@ export function Solutions() {
                       "Reduced liability from consumer sorting errors.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -589,14 +537,14 @@ export function Solutions() {
               </FadeUp>
 
               <FadeUp delay={0.15}>
-                <div className="bg-gradient-to-br from-[#f0fdfa] to-[#e0f7fa] p-7 rounded-2xl border border-[#0891b2]/10">
+                <div className="bg-gradient-to-br from-[#F5F5F5] to-[#EEF4FF] p-7 rounded-2xl border border-[#1E56A0]/10">
                   <div className="flex items-center gap-2 mb-2">
-                    <Clock className="w-4 h-4 text-[#0891b2]" />
-                    <h4 className="font-semibold text-gray-900 text-sm">
+                    <Clock className="w-4 h-4 text-[#1E56A0]" />
+                    <h4 className="font-semibold text-[#171717] text-sm">
                       Simple Integration
                     </h4>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-[#404040] text-sm leading-relaxed">
                     Pod-filling fits into existing pharmacy workflows. Training
                     takes less than 1 hour per pharmacist.
                   </p>
@@ -605,10 +553,10 @@ export function Solutions() {
 
               <FadeUp delay={0.2}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06)",
                   }}
                 >
                   <Accordion type="multiple">
@@ -661,7 +609,7 @@ export function Solutions() {
                         </ul>
                         <Link
                           to="/schedule-pilot"
-                          className="inline-flex items-center gap-2 text-[#0891b2] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
+                          className="inline-flex items-center gap-2 text-[#1E56A0] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
                         >
                           Schedule a pilot{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -676,28 +624,27 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#ffffff" toColor="#f8fafc" direction="left" />
 
       {/* ═══ SECTION 3B: HEALTH SYSTEMS ═══ */}
       <section
         id="health-systems"
-        className="py-24 md:py-32 bg-[#f8fafc] scroll-mt-32"
+        className="py-24 md:py-32 bg-[#FAFAFA] scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="order-2 lg:order-1 space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Post-discharge monitoring: Track medication behavior at home in real time.",
                       "Reduce readmission penalties with proactive intervention.",
@@ -705,7 +652,7 @@ export function Solutions() {
                       "100% EHR integration \u2014 no workflow disruption.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -714,14 +661,14 @@ export function Solutions() {
               </FadeUp>
 
               <FadeUp delay={0.15}>
-                <div className="bg-gradient-to-br from-[#f8fafc] to-[#eef5ff] p-7 rounded-2xl border border-[#1e3a8a]/10">
+                <div className="bg-gradient-to-br from-[#FAFAFA] to-[#EEF4FF] p-7 rounded-2xl border border-[#0F2B57]/10">
                   <div className="flex items-center gap-2 mb-2">
-                    <Shield className="w-4 h-4 text-[#1e3a8a]" />
-                    <h4 className="font-semibold text-gray-900 text-sm">
+                    <Shield className="w-4 h-4 text-[#0F2B57]" />
+                    <h4 className="font-semibold text-[#171717] text-sm">
                       Compliance
                     </h4>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-[#404040] text-sm leading-relaxed">
                     HIPAA compliant. SOC 2 certified. FDA Class II clearance
                     pathway.
                   </p>
@@ -730,10 +677,10 @@ export function Solutions() {
 
               <FadeUp delay={0.2}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06)",
                   }}
                 >
                   <Accordion type="multiple">
@@ -787,7 +734,7 @@ export function Solutions() {
                         </ul>
                         <Link
                           to="/roi-calculator"
-                          className="inline-flex items-center gap-2 text-[#0891b2] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
+                          className="inline-flex items-center gap-2 text-[#1E56A0] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
                         >
                           Calculate your ROI{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -801,28 +748,28 @@ export function Solutions() {
 
             <div className="order-1 lg:order-2">
               <FadeUp>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1e3a8a]/10">
-                  <Building2 className="w-7 h-7 text-[#1e3a8a]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0F2B57]/10">
+                  <Building2 className="w-7 h-7 text-[#0F2B57]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Reduce Readmissions. Increase Bundled Payment Margins.
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-[#404040] leading-relaxed mb-6">
                   Patients are discharged, and you have almost no visibility
                   into whether they&rsquo;re taking medications. Readmissions
                   erode margins. Post-discharge non-adherence is the silent
                   driver.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#1e3a8a] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#0F2B57] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   3&times;
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   cost recovery via RPM/RTM billing codes
                 </p>
               </FadeUp>
@@ -831,42 +778,41 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#f8fafc" toColor="#ffffff" direction="right" />
 
       {/* ═══ SECTION 4: SENIOR LIVING & HOME HEALTH ═══ */}
       <section
         id="senior-living"
         className="py-24 md:py-32 bg-white scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <FadeUp>
               <div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0891b2]/10">
-                  <Heart className="w-7 h-7 text-[#0891b2]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1E56A0]/10">
+                  <Heart className="w-7 h-7 text-[#1E56A0]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Keep Residents Safe. Reduce Med Errors. Protect Your License.
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-4">
+                <p className="text-xl text-[#404040] leading-relaxed mb-4">
                   Assisted living and home health agencies manage dozens of
                   medication regimens daily. Manual administration tracking
                   leads to errors, omissions, and liability. iRxReminder
                   automates the hard part.
                 </p>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-[#404040] leading-relaxed mb-6">
                   Serving 15,000+ aging communities and a 62M US aging population that is doubling by 2030.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#0891b2] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#1E56A0] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   2&times;
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   Older adult population growth by 2030
                 </p>
               </div>
@@ -875,16 +821,16 @@ export function Solutions() {
             <div className="space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Pharmacist-filled pods eliminate staff sorting errors and med pass complexity.",
                       "Real-time records replace paper MAR sheets with verified digital documentation.",
@@ -892,7 +838,7 @@ export function Solutions() {
                       "Family member visibility reduces anxiety and support calls.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -902,10 +848,10 @@ export function Solutions() {
 
               <FadeUp delay={0.15}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06)",
                   }}
                 >
                   <Accordion type="multiple">
@@ -955,7 +901,7 @@ export function Solutions() {
                         </ul>
                         <Link
                           to="/schedule-pilot"
-                          className="inline-flex items-center gap-2 text-[#0891b2] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
+                          className="inline-flex items-center gap-2 text-[#1E56A0] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
                         >
                           Schedule a pilot{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -970,28 +916,27 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#ffffff" toColor="#f8fafc" direction="left" />
 
       {/* ═══ SECTION 5: HEALTHCARE UNDERWRITERS ═══ */}
       <section
         id="underwriters"
-        className="py-24 md:py-32 bg-[#f8fafc] scroll-mt-32"
+        className="py-24 md:py-32 bg-[#FAFAFA] scroll-mt-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="order-2 lg:order-1 space-y-5">
               <FadeUp delay={0.1}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
-                  <h4 className="font-bold text-gray-900 mb-4">
+                  <h4 className="font-bold text-[#171717] mb-4">
                     How iRxReminder Helps
                   </h4>
-                  <ul className="text-gray-600 space-y-2.5 leading-relaxed">
+                  <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                     {[
                       "Verified adherence data replaces self-reported compliance claims.",
                       "Risk stratification based on real-time medication behavior patterns.",
@@ -999,7 +944,7 @@ export function Solutions() {
                       "Population health analytics for covered lives.",
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#0891b2] flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-4 h-4 text-[#1E56A0] flex-shrink-0 mt-1" />
                         <span>{text}</span>
                       </li>
                     ))}
@@ -1009,10 +954,10 @@ export function Solutions() {
 
               <FadeUp delay={0.15}>
                 <div
-                  className="bg-white p-7 rounded-2xl border border-gray-100"
+                  className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06)",
                   }}
                 >
                   <Accordion type="multiple">
@@ -1065,7 +1010,7 @@ export function Solutions() {
                         </ul>
                         <Link
                           to="/roi-calculator"
-                          className="inline-flex items-center gap-2 text-[#0891b2] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
+                          className="inline-flex items-center gap-2 text-[#1E56A0] font-semibold text-sm mt-4 hover:gap-3 transition-[gap]"
                         >
                           Calculate your ROI{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -1079,28 +1024,28 @@ export function Solutions() {
 
             <div className="order-1 lg:order-2">
               <FadeUp>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#1e3a8a]/10">
-                  <BarChart3 className="w-7 h-7 text-[#1e3a8a]" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-[#0F2B57]/10">
+                  <BarChart3 className="w-7 h-7 text-[#0F2B57]" />
                 </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6 tracking-tight"
+                  className="text-3xl md:text-4xl font-bold text-[#0F2B57] mb-6 tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Better Data. Better Risk Models. Lower Claims.
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-[#404040] leading-relaxed mb-6">
                   Payers and underwriters rely on self-reported adherence data
                   that is notoriously unreliable. iRxReminder provides
                   verified, dose-level medication behavior data that transforms
                   risk assessment and population health management.
                 </p>
                 <div
-                  className="text-5xl md:text-6xl font-extrabold text-[#1e3a8a] tracking-tight"
+                  className="text-5xl md:text-6xl font-extrabold text-[#0F2B57] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   $300B+
                 </div>
-                <p className="text-gray-500 font-medium mt-1">
+                <p className="text-[#737373] font-medium mt-1">
                   Annual cost of medication non-adherence in the U.S.
                 </p>
               </FadeUp>
@@ -1109,22 +1054,21 @@ export function Solutions() {
         </div>
       </section>
 
-      <SectionDivider fromColor="#f8fafc" toColor="#ffffff" direction="right" />
 
       {/* ═══ PERSONA PATHS ═══ */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
-            <p className="text-[#0891b2] font-semibold text-sm tracking-widest uppercase mb-4 text-center">
+            <p className="text-[#1E56A0] font-semibold text-sm tracking-widest uppercase mb-4 text-center">
               Decision Makers
             </p>
             <h2
-              className="text-4xl md:text-5xl font-bold text-[#1e3a8a] text-center mb-4 tracking-tight"
+              className="text-4xl md:text-5xl font-bold text-[#0F2B57] text-center mb-4 tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Speak to Your C-Suite
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#404040] text-center mb-16 max-w-3xl mx-auto leading-relaxed">
               Different stakeholders need different answers. Here&rsquo;s what
               each one hears.
             </p>
@@ -1138,7 +1082,7 @@ export function Solutions() {
                 title: "CMO",
                 outcome:
                   "83% adherence. Fewer readmissions. Better patient outcomes across populations.",
-                color: "#1e3a8a",
+                color: "#0F2B57",
                 to: "/platform",
               },
               {
@@ -1146,7 +1090,7 @@ export function Solutions() {
                 title: "CFO",
                 outcome:
                   "3x cost recovery via RPM/RTM codes. Reduced readmission penalties. Measurable ROI.",
-                color: "#0891b2",
+                color: "#1E56A0",
                 to: "/roi-calculator",
               },
               {
@@ -1154,7 +1098,7 @@ export function Solutions() {
                 title: "Case Management",
                 outcome:
                   "Simple dashboards. Reliable post-discharge data. Intervene before crisis.",
-                color: "#1e3a8a",
+                color: "#0F2B57",
                 to: "/platform#dashboard",
               },
               {
@@ -1162,17 +1106,17 @@ export function Solutions() {
                 title: "Pharmacy Director",
                 outcome:
                   "New revenue stream. Patient retention via 90-day pod fills. Real medication use data.",
-                color: "#0891b2",
+                color: "#1E56A0",
                 to: "/platform",
               },
             ].map((persona, i) => (
               <FadeUp key={persona.title} delay={0.1 + i * 0.08}>
                 <Link
                   to={persona.to}
-                  className="group block min-w-[260px] snap-start bg-white p-7 rounded-2xl border border-gray-100 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 h-full"
+                  className="group block min-w-[260px] snap-start bg-white p-7 rounded-2xl border border-[#E5E5E5]/60 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 h-full"
                   style={{
                     boxShadow:
-                      "0 1px 3px rgba(8,145,178,0.04), 0 4px 12px rgba(8,145,178,0.06), 0 16px 40px rgba(30,58,138,0.06)",
+                      "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.06), 0 16px 40px rgba(15,43,87,0.06)",
                   }}
                 >
                   <div
@@ -1185,15 +1129,15 @@ export function Solutions() {
                     />
                   </div>
                   <div
-                    className="font-bold text-lg text-gray-900 mb-3"
+                    className="font-bold text-lg text-[#171717] mb-3"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {persona.title}
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  <p className="text-[#404040] text-sm leading-relaxed mb-5">
                     {persona.outcome}
                   </p>
-                  <span className="inline-flex items-center text-[#0891b2] font-semibold text-sm group-hover:gap-3 gap-2 transition-[gap]">
+                  <span className="inline-flex items-center text-[#1E56A0] font-semibold text-sm group-hover:gap-3 gap-2 transition-[gap]">
                     See details <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
@@ -1204,36 +1148,22 @@ export function Solutions() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1d3d] via-[#152c6e] to-[#1e3a8a]" />
-        <div className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-[#0891b2]/15 rounded-full blur-[100px]" />
-        <GrainTexture opacity={0.04} />
-
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-24 md:py-32 bg-[#EEF4FF]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
             <h2
-              className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight"
+              className="text-3xl md:text-5xl font-bold text-[#0F2B57] mb-6 tracking-tight leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               See how iRxReminder fits
               <br />
-              <span className="text-[#0891b2]">your use case</span>
+              <span className="text-[#1E56A0]">your use case</span>
             </h2>
-            <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#404040] mb-8 max-w-2xl mx-auto leading-relaxed">
               We&rsquo;ll configure a pilot around your specific
               needs&nbsp;&mdash; research, behavioral health, pharmacy, or
               health system.
             </p>
-            <FloatingBadgeGroup
-              variant="glass"
-              className="justify-center mb-10"
-              badges={[
-                // TODO: Update to "FDA 510(k) Cleared" once clearance is granted
-                { icon: Shield, text: "FDA 510(k) Pathway" },
-                { icon: Lock, text: "HIPAA Compliant" },
-                { icon: CheckCircle2, text: "SOC 2 Type II" },
-              ]}
-            />
           </FadeUp>
 
           <FadeUp delay={0.2}>
@@ -1241,7 +1171,7 @@ export function Solutions() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#0891b2] hover:bg-[#0e7490] text-white text-lg px-8 py-6 shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                className="bg-[#1E56A0] hover:bg-[#163D7A] text-white text-lg px-8 py-6 shadow-[0_1px_3px_rgba(30,86,160,0.3),0_6px_20px_rgba(30,86,160,0.25)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.4),0_8px_28px_rgba(30,86,160,0.3)] transition-[background-color,box-shadow]"
               >
                 <Link to="/schedule-pilot">
                   Schedule a Pilot
@@ -1252,7 +1182,7 @@ export function Solutions() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/80 bg-white/5 hover:border-white hover:bg-white/15 text-white text-lg px-8 py-6 transition-colors"
+                className="border-[#0F2B57]/20 bg-white hover:border-[#0F2B57]/40 hover:bg-white/80 text-[#0F2B57] text-lg px-8 py-6 transition-colors"
               >
                 <Link to="/evidence">See the Evidence</Link>
               </Button>

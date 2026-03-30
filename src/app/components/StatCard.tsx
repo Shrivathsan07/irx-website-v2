@@ -4,11 +4,9 @@ interface StatCardProps {
   end: number;
   prefix?: string;
   suffix?: string;
-  /** Number of decimal places to display */
   decimals?: number;
   label: string;
   description?: string;
-  /** "glass" for dark backgrounds, "elevated" for light */
   variant?: "glass" | "elevated";
   color?: string;
 }
@@ -21,16 +19,16 @@ export function StatCard({
   label,
   description,
   variant = "elevated",
-  color = "#0891b2",
+  color = "#1E56A0",
 }: StatCardProps) {
   const isGlass = variant === "glass";
 
   return (
     <div
-      className={`group relative p-6 md:p-8 rounded-2xl text-center overflow-hidden min-w-0 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 ${
+      className={`group relative p-6 md:p-8 rounded-2xl text-center overflow-hidden min-w-0 transition-transform duration-300 hover:-translate-y-0.5 ${
         isGlass
-          ? "bg-white/[0.12] backdrop-blur-md border border-white/15 hover:bg-white/[0.16] hover:border-white/25"
-          : "bg-white border border-gray-100 shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)]"
+          ? "bg-white/[0.05] backdrop-blur-sm border border-white/10"
+          : "bg-white border border-[#E5E5E5]/60 shadow-sm hover:shadow-lg hover:shadow-[#1E56A0]/5"
       }`}
     >
       <CountUp
@@ -38,12 +36,12 @@ export function StatCard({
         prefix={prefix}
         suffix={suffix}
         decimals={decimals}
-        className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 tracking-tight block"
+        className="relative text-3xl sm:text-4xl md:text-5xl font-bold mb-3 tracking-tight block"
         style={{ color, fontFamily: "var(--font-display)" }}
       />
       <div
-        className={`text-xs font-semibold uppercase tracking-widest mb-2 ${
-          isGlass ? "text-blue-200" : "text-gray-500"
+        className={`text-xs font-semibold uppercase tracking-wider mb-2 ${
+          isGlass ? "text-[#A3A3A3]" : "text-[#737373]"
         }`}
       >
         {label}
@@ -51,7 +49,7 @@ export function StatCard({
       {description && (
         <p
           className={`text-sm leading-relaxed ${
-            isGlass ? "text-blue-100/80" : "text-gray-500"
+            isGlass ? "text-[#D4D4D4]" : "text-[#737373]"
           }`}
         >
           {description}

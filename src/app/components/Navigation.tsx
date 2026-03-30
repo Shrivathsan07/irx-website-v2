@@ -1,30 +1,58 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
-import { Phone, Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import { Menu, X, ChevronDown, Brain, FlaskConical, Pill, Heart } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 
 const navLinks = [
   { to: "/platform", label: "Platform" },
-  { to: "/solutions", label: "Solutions" },
   { to: "/evidence", label: "Evidence" },
   { to: "/about", label: "About" },
-  { to: "/news", label: "News" },
-  { to: "/contact", label: "Contact" },
 ];
 
-// TODO: Replace text logo with image when brand assets are provided:
-// <img src="/images/brand/irx-logo.svg" alt="iRxReminder" className="h-8 w-auto" />
+const solutionItems = [
+  {
+    icon: Brain,
+    title: "Mental Health",
+    description: "Real-time adherence monitoring for behavioral health agencies",
+    to: "/solutions#mental-health",
+  },
+  {
+    icon: FlaskConical,
+    title: "Clinical Research",
+    description: "Automated protocol compliance tracking for trials",
+    to: "/solutions#research",
+  },
+  {
+    icon: Pill,
+    title: "Pharmaceutical",
+    description: "Real-world evidence and adherence data for pharma",
+    to: "/solutions#pharma",
+  },
+  {
+    icon: Heart,
+    title: "Aging in Place",
+    description: "Safe medication management for independent living",
+    to: "/solutions#aging",
+  },
+];
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isShrunk, setIsShrunk] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const solutionsRef = useRef<HTMLDivElement>(null);
+  const solutionsTriggerRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
+      setIsScrolled(window.scrollY > 10);
+      setIsShrunk(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,143 +60,255 @@ export function Navigation() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsSolutionsOpen(false);
+    setIsMobileSolutionsOpen(false);
   }, [location]);
 
+  // Close solutions dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        solutionsRef.current &&
+        !solutionsRef.current.contains(e.target as Node) &&
+        solutionsTriggerRef.current &&
+        !solutionsTriggerRef.current.contains(e.target as Node)
+      ) {
+        setIsSolutionsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const isActive = (path: string) => location.pathname === path;
+  const isSolutionsActive = location.pathname === "/solutions";
+
+  const handleDemoCTA = () => {
+    if (location.pathname === "/") {
+      const contactEl = document.getElementById("contact");
+      if (contactEl) {
+        contactEl.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    navigate("/contact");
+  };
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_3px_rgba(30,58,138,0.06),0_4px_12px_rgba(30,58,138,0.08)]"
-          : "bg-white"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <span
-              className="text-2xl font-extrabold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              <span className="text-[#1e3a8a]">iRx</span>
-              <span className="text-[#0891b2]">Reminder</span>
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
-                  isActive(link.to)
-                    ? "text-[#0891b2]"
-                    : "text-gray-600 hover:text-[#1e3a8a] hover:bg-gray-50"
-                }`}
+    <>
+      <nav
+        className={`sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b transition-[box-shadow,height] duration-300 ${
+          isScrolled ? "shadow-sm border-[#E5E5E5]/50" : "border-transparent"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className={`flex justify-between items-center transition-[height] duration-300 ${isShrunk ? "h-14" : "h-16"}`}>
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <span
+                className="text-xl font-extrabold tracking-tight"
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                {link.label}
-                {isActive(link.to) && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#0891b2] rounded-full" />
-                )}
-              </Link>
-            ))}
-          </div>
+                <span className="text-[#0F2B57]">iRx</span>
+                <span className="text-[#404040]">Reminder</span>
+              </span>
+            </Link>
 
-          {/* Phone & CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="tel:3308068675"
-              className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#1e3a8a] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span className="font-medium">330.806.8675</span>
-            </a>
-            <Button
-              asChild
-              variant="outline"
-              size="sm"
-              className="border-[#1e3a8a]/20 text-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white hover:border-[#1e3a8a] transition-colors"
-            >
-              <Link to="/roi-calculator">ROI Calculator</Link>
-            </Button>
-            <Button
-              asChild
-              size="sm"
-              className="bg-[#0891b2] hover:bg-[#0e7490] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_4px_12px_rgba(8,145,178,0.15)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_6px_16px_rgba(8,145,178,0.2)] transition-[background-color,box-shadow]"
-            >
-              <Link to="/schedule-pilot">Schedule a Pilot</Link>
-            </Button>
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.slice(0, 1).map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`text-[0.9375rem] font-medium transition-colors ${
+                    isActive(link.to) ? "text-[#1E56A0]" : "text-[#404040] hover:text-[#1E56A0]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-gray-600 hover:text-[#1e3a8a] rounded-lg hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+              {/* Solutions dropdown */}
+              <div className="relative">
+                <button
+                  ref={solutionsTriggerRef}
+                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                  onMouseEnter={() => setIsSolutionsOpen(true)}
+                  className={`text-[0.9375rem] font-medium transition-colors inline-flex items-center gap-1 ${
+                    isSolutionsActive ? "text-[#1E56A0]" : "text-[#404040] hover:text-[#1E56A0]"
+                  }`}
+                >
+                  Solutions
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isSolutionsOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isSolutionsOpen && (
+                    <motion.div
+                      ref={solutionsRef}
+                      initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      onMouseLeave={() => setIsSolutionsOpen(false)}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[360px] bg-white rounded-xl shadow-xl shadow-[#171717]/10 border border-[#E5E5E5]/60 p-2 z-50"
+                    >
+                      {solutionItems.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#FAFAFA] transition-colors group"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-[#EEF4FF] flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <item.icon className="w-5 h-5 text-[#1E56A0]" strokeWidth={1.5} />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-[#171717] group-hover:text-[#1E56A0] transition-colors">
+                              {item.title}
+                            </p>
+                            <p className="text-xs text-[#737373] mt-0.5 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {navLinks.slice(1).map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`text-[0.9375rem] font-medium transition-colors ${
+                    isActive(link.to) ? "text-[#1E56A0]" : "text-[#404040] hover:text-[#1E56A0]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden lg:block">
+              <button
+                onClick={handleDemoCTA}
+                className="bg-[#1E56A0] text-white px-6 py-2.5 rounded-xl font-semibold text-[0.9375rem] transition-colors hover:bg-[#163D7A] hover:shadow-md hover:shadow-[#1E56A0]/20 focus:ring-2 focus:ring-[#1E56A0] focus:ring-offset-2 focus-visible:outline-none"
+              >
+                Request a Demo
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-[#404040] hover:text-[#171717] rounded-lg hover:bg-[#F5F5F5] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 focus-visible:ring-offset-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu — Full-screen overlay */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="lg:hidden pb-6 border-t border-gray-100 overflow-hidden"
-              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
-              animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, height: "auto" }}
-              exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="lg:hidden fixed inset-0 top-14 bg-white z-40 overflow-y-auto"
+              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: "100%" }}
+              animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
+              exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: "100%" }}
+              transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <div className="pt-4 space-y-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      isActive(link.to)
-                        ? "text-[#0891b2] bg-cyan-50"
-                        : "text-gray-700 hover:text-[#1e3a8a] hover:bg-gray-50"
+              <div className="px-5 py-6 pb-32">
+                <Link
+                  to="/platform"
+                  className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
+                    isActive("/platform") ? "text-[#1E56A0]" : "text-[#171717]"
+                  }`}
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Platform
+                </Link>
+
+                {/* Solutions accordion */}
+                <div className="border-b border-[#F5F5F5]">
+                  <button
+                    onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
+                    className={`flex items-center justify-between w-full py-3 text-2xl font-semibold ${
+                      isSolutionsActive ? "text-[#1E56A0]" : "text-[#171717]"
                     }`}
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-4 pt-4 border-t border-gray-100 space-y-3 px-4">
-                <a
-                  href="tel:3308068675"
-                  className="flex items-center gap-2 text-gray-600 text-sm"
+                    Solutions
+                    <ChevronDown className={`w-5 h-5 transition-transform ${isMobileSolutionsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <AnimatePresence>
+                    {isMobileSolutionsOpen && (
+                      <motion.div
+                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
+                        animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, height: "auto" }}
+                        exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-3 space-y-1">
+                          {solutionItems.map((item) => (
+                            <Link
+                              key={item.to}
+                              to={item.to}
+                              className="flex items-center gap-3 py-2.5 text-base text-[#404040] hover:text-[#1E56A0]"
+                            >
+                              <item.icon className="w-5 h-5 text-[#1E56A0]" strokeWidth={1.5} />
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link
+                  to="/evidence"
+                  className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
+                    isActive("/evidence") ? "text-[#1E56A0]" : "text-[#171717]"
+                  }`}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
-                  <Phone className="w-4 h-4" />
-                  <span className="font-medium">330.806.8675</span>
-                </a>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-[#1e3a8a]/20 text-[#1e3a8a]"
+                  Evidence
+                </Link>
+
+                <Link
+                  to="/about"
+                  className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
+                    isActive("/about") ? "text-[#1E56A0]" : "text-[#171717]"
+                  }`}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
-                  <Link to="/roi-calculator">ROI Calculator</Link>
-                </Button>
-                <Button
-                  asChild
-                  className="w-full bg-[#0891b2] hover:bg-[#0e7490]"
-                >
-                  <Link to="/schedule-pilot">Schedule a Pilot</Link>
-                </Button>
+                  About
+                </Link>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
+      </nav>
+
+      {/* Mobile fixed bottom CTA */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-[#E5E5E5] z-50">
+        <button
+          onClick={handleDemoCTA}
+          className="w-full bg-[#1E56A0] text-white py-3 rounded-xl font-semibold text-[0.9375rem] transition-colors hover:bg-[#163D7A] focus:ring-2 focus:ring-[#1E56A0] focus:ring-offset-2 focus-visible:outline-none"
+        >
+          Request a Demo
+        </button>
       </div>
-    </nav>
+    </>
   );
 }

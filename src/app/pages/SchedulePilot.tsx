@@ -6,7 +6,6 @@ import { Textarea } from "../components/ui/textarea";
 import { Shield, TrendingUp, Award, Lock, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeUp } from "@/app/components/animations";
-import { GrainTexture } from "@/app/components/GrainTexture";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 import { FloatingBadgeGroup } from "@/app/components/FloatingBadge";
 
@@ -21,7 +20,7 @@ interface PilotFormData {
 
 export function SchedulePilot() {
   const prefersReducedMotion = useReducedMotion();
-  const heroAnimation = prefersReducedMotion ? {} : { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 } };
+  const heroAnimation = prefersReducedMotion ? {} : { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } };
   const {
     register,
     handleSubmit,
@@ -37,26 +36,23 @@ export function SchedulePilot() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1d3d] via-[#152c6e] to-[#1e3a8a]" />
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#0891b2]/15 rounded-full blur-[100px]" />
-        <GrainTexture opacity={0.04} />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      {/* Hero — Light */}
+      <section className="bg-[#EEF4FF]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 py-24 text-center">
           <motion.div {...heroAnimation}>
-            <p className="text-[#0891b2] font-semibold text-sm tracking-widest uppercase mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-4">
               Get Started
             </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#171717] mb-3 tracking-[-0.02em]" style={{ fontFamily: "var(--font-display)" }}>
               Schedule a Pilot Program
             </h1>
             <p
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0891b2] tracking-tight mb-6"
+              className="text-xl sm:text-2xl font-bold text-[#1E56A0] tracking-[-0.01em] mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get Started in 30 Days
             </p>
-            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#737373] max-w-2xl mx-auto">
               See firsthand how iRxReminder improves medication adherence,
               reduces readmissions, and generates reimbursable revenue
             </p>
@@ -66,16 +62,16 @@ export function SchedulePilot() {
 
       {/* Form + Sidebar */}
       <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2">
               <FadeUp>
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className="bg-white border border-gray-100 rounded-2xl p-8 shadow-[0_1px_3px_rgba(30,58,138,0.04),0_8px_24px_rgba(30,58,138,0.06)]"
+                  className="bg-white border border-[#E5E5E5]/60 rounded-2xl p-8 shadow-sm"
                 >
-                  <h2 className="text-2xl font-bold text-[#1e3a8a] mb-6 tracking-tight">
+                  <h2 className="text-2xl font-bold text-[#171717] mb-6 tracking-[-0.01em]">
                     Pilot Program Information
                   </h2>
 
@@ -168,7 +164,7 @@ export function SchedulePilot() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                      className="w-full bg-[#1E56A0] hover:bg-[#163D7A] text-white transition-colors hover:shadow-md hover:shadow-[#1E56A0]/20"
                     >
                       Submit Pilot Request
                     </Button>
@@ -189,23 +185,23 @@ export function SchedulePilot() {
             {/* Sidebar */}
             <div className="space-y-6">
               <FadeUp delay={0.1}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-4">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
+                  <h3 className="font-bold text-[#171717] mb-4">
                     Why Pilot with iRxReminder?
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { icon: Shield, label: "83% Adherence", sub: "Clinically validated improvement", color: "#1e3a8a" },
-                      { icon: TrendingUp, label: "3\u00d7 ROI", sub: "Via RPM/RTM billing", color: "#0891b2" },
-                      { icon: Award, label: "NIH-Funded", sub: "Federally validated research", color: "#1e3a8a" },
+                      { icon: Shield, label: "83% Adherence", sub: "Clinically validated improvement", color: "#0F2B57" },
+                      { icon: TrendingUp, label: "3\u00d7 ROI", sub: "Via RPM/RTM billing", color: "#1E56A0" },
+                      { icon: Award, label: "NIH-Funded", sub: "Federally validated research", color: "#0F2B57" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-3">
                         <item.icon className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: item.color }} />
                         <div>
-                          <div className="font-semibold text-gray-900 text-sm">
+                          <div className="font-semibold text-[#171717] text-sm">
                             {item.label}
                           </div>
-                          <div className="text-xs text-gray-500">
+                          <div className="text-xs text-[#737373]">
                             {item.sub}
                           </div>
                         </div>
@@ -216,9 +212,9 @@ export function SchedulePilot() {
               </FadeUp>
 
               <FadeUp delay={0.15}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-3">Trusted By</h3>
-                  <div className="space-y-1.5 text-sm text-gray-500">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
+                  <h3 className="font-bold text-[#171717] mb-3">Trusted By</h3>
+                  <div className="space-y-1.5 text-sm text-[#737373]">
                     {[
                       "Harvard University",
                       "MetroHealth",
@@ -234,14 +230,14 @@ export function SchedulePilot() {
               </FadeUp>
 
               <FadeUp delay={0.2}>
-                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-100" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-gray-900 mb-2">Questions?</h3>
-                  <p className="text-sm text-gray-500 mb-3">
+                <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
+                  <h3 className="font-bold text-[#171717] mb-2">Questions?</h3>
+                  <p className="text-sm text-[#737373] mb-3">
                     Our team is here to help
                   </p>
                   <a
                     href="tel:3308068675"
-                    className="text-[#0891b2] font-semibold hover:text-[#0e7490] transition-colors"
+                    className="text-[#1E56A0] font-semibold hover:text-[#163D7A] transition-colors"
                   >
                     330.806.8675
                   </a>

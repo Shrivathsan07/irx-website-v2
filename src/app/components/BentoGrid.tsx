@@ -27,14 +27,13 @@ export function BentoGrid({ items, className = "" }: BentoGridProps) {
               ? "md:col-span-1 lg:col-span-1"
               : "";
 
-        const color = item.color || "#0891b2";
+        const color = item.color || "#1E56A0";
 
         return (
           <FadeUp key={item.title} delay={0.05 + i * 0.06}>
             <div
-              className={`group relative h-full p-7 md:p-8 rounded-2xl border border-gray-100 bg-white transition-[box-shadow,transform] duration-300 hover:-translate-y-1 cursor-default
-                shadow-[0_1px_3px_rgba(8,145,178,0.04),0_4px_12px_rgba(8,145,178,0.06),0_16px_40px_rgba(30,58,138,0.06)]
-                hover:shadow-[0_1px_3px_rgba(8,145,178,0.06),0_8px_20px_rgba(8,145,178,0.1),0_24px_48px_rgba(30,58,138,0.1)]
+              className={`group relative h-full p-7 md:p-8 rounded-2xl border border-[#E5E5E5]/60 bg-white transition-[box-shadow,transform] duration-300 hover:-translate-y-1 cursor-default
+                shadow-sm hover:shadow-lg hover:shadow-[#1E56A0]/5
                 ${spanClass}`}
             >
               {/* Accent top border */}
@@ -45,7 +44,7 @@ export function BentoGrid({ items, className = "" }: BentoGridProps) {
 
               {item.stat && (
                 <div
-                  className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight"
+                  className="text-4xl md:text-5xl font-bold mb-4 tracking-tight"
                   style={{ color, fontFamily: "var(--font-display)" }}
                 >
                   {item.stat}
@@ -64,10 +63,10 @@ export function BentoGrid({ items, className = "" }: BentoGridProps) {
                 </div>
               )}
 
-              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">
+              <h3 className="text-xl font-bold text-[#171717] mb-3 tracking-tight">
                 {item.title}
               </h3>
-              <p className="text-gray-500 leading-relaxed text-[15px]">
+              <p className="text-[#737373] leading-relaxed text-[15px]">
                 {item.description}
               </p>
             </div>

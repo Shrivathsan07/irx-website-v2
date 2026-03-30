@@ -1,87 +1,51 @@
 import { Link } from "react-router";
-import { Phone, Mail, Linkedin, ArrowRight } from "lucide-react";
+import { Linkedin, Shield, Award, FileCheck, GraduationCap } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#152c6e] text-white">
-      {/* Pre-footer CTA */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3
-                className="text-2xl md:text-3xl font-bold tracking-tight mb-2"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Ready to improve medication adherence?
-              </h3>
-              <p className="text-blue-200 text-lg">
-                See how iRxReminder delivers measurable outcomes for your
-                organization.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/schedule-pilot"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0891b2] hover:bg-[#0e7490] text-white font-medium rounded-lg shadow-[0_1px_3px_rgba(8,145,178,0.3),0_4px_12px_rgba(8,145,178,0.15)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_6px_16px_rgba(8,145,178,0.2)] transition-[background-color,box-shadow] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#152c6e]"
-              >
-                Schedule a Pilot
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/roi-calculator"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 text-white font-medium rounded-lg border border-white/80 hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#152c6e]"
-              >
-                Calculate Your ROI
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-[#171717] text-[#A3A3A3]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Brand */}
           <div>
             <span
-              className="text-2xl font-extrabold tracking-tight"
+              className="text-xl font-extrabold tracking-tight text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              iRx<span className="text-[#0891b2]">Reminder</span>
+              iRx<span className="text-[#A3A3A3]">Reminder</span>
             </span>
-            <p className="text-sm text-blue-200 mt-3 mb-4 leading-relaxed">
-              Safe. Connected. Reimbursable.
+            <p className="text-sm text-[#737373] mt-3 mb-4 leading-relaxed">
+              Empowering patients and care teams to achieve high medication adherence.
             </p>
-            <address className="text-sm text-blue-300 not-italic leading-relaxed">
-              1768 E 25th St #308
-              <br />
-              Cleveland, OH 44114
-            </address>
+            <a
+              href="https://www.linkedin.com/company/irxreminder-llc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#737373] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+            >
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
+            <p className="text-xs text-[#525252] mt-3">Cleveland, OH</p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Platform */}
           <div>
             <h4
-              className="font-semibold text-sm tracking-widest uppercase text-blue-300 mb-4"
-              style={{ fontFamily: "var(--font-body)" }}
+              className="text-xs font-semibold text-[#D4D4D4] uppercase tracking-wider mb-4"
             >
-              Quick Links
+              Platform
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2">
               {[
-                { to: "/", label: "Home" },
-                { to: "/platform", label: "Platform" },
-                { to: "/solutions", label: "Solutions" },
-                { to: "/evidence", label: "Evidence" },
-                { to: "/about", label: "About Us" },
-                { to: "/news", label: "News" },
-                { to: "/contact", label: "Contact" },
+                { to: "/platform", label: "iRxControl Center" },
+                { to: "/platform", label: "iRxCapture Pro" },
+                { to: "/platform", label: "iLidRx Pod" },
               ].map((link) => (
-                <li key={link.to}>
+                <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
+                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
                   >
                     {link.label}
                   </Link>
@@ -90,91 +54,85 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Tools */}
+          {/* Column 3: Company */}
           <div>
             <h4
-              className="font-semibold text-sm tracking-widest uppercase text-blue-300 mb-4"
-              style={{ fontFamily: "var(--font-body)" }}
+              className="text-xs font-semibold text-[#D4D4D4] uppercase tracking-wider mb-4"
             >
-              Tools & Resources
+              Company
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link
-                  to="/roi-calculator"
-                  className="text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
-                >
-                  ROI Calculator
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/schedule-pilot"
-                  className="text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
-                >
-                  Schedule a Pilot
-                </Link>
-              </li>
+            <ul className="space-y-2">
+              {[
+                { to: "/about", label: "About" },
+                { to: "/news", label: "News" },
+                { to: "/contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Connect */}
+          {/* Column 4: Resources */}
           <div>
             <h4
-              className="font-semibold text-sm tracking-widest uppercase text-blue-300 mb-4"
-              style={{ fontFamily: "var(--font-body)" }}
+              className="text-xs font-semibold text-[#D4D4D4] uppercase tracking-wider mb-4"
             >
-              Connect
+              Resources
             </h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="tel:3308068675"
-                  className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>330.806.8675</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@irxreminder.com"
-                  className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>info@irxreminder.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/irxreminder-llc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  <span>LinkedIn</span>
-                </a>
-              </li>
+            <ul className="space-y-2">
+              {[
+                { to: "/evidence", label: "Evidence" },
+                { to: "/roi-calculator", label: "ROI Calculator" },
+                { to: "/schedule-pilot", label: "Schedule a Pilot" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        {/* Compliance */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-blue-300">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <p>&copy; {new Date().getFullYear()} iRxReminder LLC. All rights reserved.</p>
-              <span className="hidden sm:inline text-blue-400/40">|</span>
-              <span className="text-blue-300/80 text-xs">HIPAA Compliant &middot; SOC 2 Type II</span>
-            </div>
+        {/* Compliance badges */}
+        <div className="flex flex-wrap items-center gap-6 mt-12">
+          {[
+            { icon: Shield, text: "HIPAA Compliant" },
+            { icon: GraduationCap, text: "NIH-Funded Research" },
+            { icon: Award, text: "12 Patents" },
+            { icon: FileCheck, text: "IRB-Approved Studies" },
+          ].map((badge) => (
+            <span key={badge.text} className="flex items-center gap-2 text-xs text-[#525252]">
+              <badge.icon className="w-4 h-4" strokeWidth={1.5} />
+              {badge.text}
+            </span>
+          ))}
+        </div>
+
+        {/* Divider + Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-[#262626]">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#525252]">
+            <p>&copy; {new Date().getFullYear()} iRxReminder LLC &middot; Cleveland, OH</p>
             <div className="flex gap-6">
-              <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm">
+              <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm">
                 Privacy Policy
               </Link>
-              <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0891b2]/40 focus-visible:ring-offset-1 focus-visible:ring-offset-[#152c6e] rounded-sm">
-                Terms of Use
+              <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm">
+                Terms of Service
+              </Link>
+              <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm">
+                HIPAA Compliance
               </Link>
             </div>
           </div>

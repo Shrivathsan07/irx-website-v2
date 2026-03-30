@@ -88,3 +88,57 @@
 - If product images are provided: replace DeviceMockup, update Platform visuals
 - If brand logo SVG provided: update Navigation component
 - Consider adding Recharts visualization to Evidence page (per CLAUDE.md guidance)
+
+---
+
+## 2026-03-29 — Session 3: Full UI Redesign (6-Phase Visual Rebuild)
+
+### What was done
+Complete visual rebuild following `iRx_Website_Redesign_Full_UI_Spec.md` — migrating from dark navy/teal/grain-texture aesthetic to clean white/brand-blue (`#1E56A0`) modern design inspired by AdhereTech, Wellth, and Stripe.
+
+**Phase 1: Design System Migration**
+- `fonts.css` — DM Sans → Inter (body font)
+- `theme.css` — New brand color scale (#1E56A0), warm neutrals (#FAFAFA–#171717), accent green (#10B981)
+- `index.html` — Added Google Fonts preconnect + direct font link
+
+**Phase 2: New Shared Components + Animation Update**
+- Created `SectionWrapper.tsx` — standardized section with bg variants + max-w-6xl container
+- Created `SectionHeader.tsx` — reusable label + title + subtitle pattern
+- `FadeUp.tsx` — spring easing → cubic-bezier `[0.25, 0.1, 0.25, 1]`
+
+**Phase 3: Navigation Rebuild**
+- Complete rewrite: 5 items (Platform, Solutions dropdown, Evidence, About + "Request a Demo" CTA)
+- Solutions dropdown panel with 4 items + icons + descriptions
+- Scroll-aware: shadow + height shrink at 300px
+- Mobile: full-screen overlay + fixed bottom CTA bar
+
+**Phase 4: Footer Rebuild**
+- bg-[#171717] (was #152c6e), 4-column layout, compliance badges row
+- Removed pre-footer CTA section
+
+**Phase 5: Homepage Rebuild**
+- 9 new sections: Hero (white split), Problem (dark), How It Works, Platform Overview, CTA Banner, Comparison Table, Use Cases (tabs), Testimonials, Contact Form
+- Removed GrainTexture, SectionDivider, SplitHero, BentoGrid imports
+
+**Phase 6: All Other Pages Color Alignment**
+- Platform, Solutions, Evidence, About, Contact, News, NewsArticle, ROI Calculator, Schedule Pilot — all migrated
+- Shared components updated: StatCard, FloatingBadge, LogoTicker, SplitHero, BentoGrid, TimelineTrack, ComparisonChart
+- UI components: tabs.tsx, accordion.tsx — colors updated
+- Global grep confirms zero old hex values (#1e3a8a, #0891b2, #152c6e, #0f1d3d, #0a1628) in active code
+
+### Files changed (27 files)
+- `index.html`, `src/styles/fonts.css`, `src/styles/theme.css`
+- `src/app/components/SectionWrapper.tsx` (NEW), `SectionHeader.tsx` (NEW)
+- `src/app/components/animations/FadeUp.tsx`
+- `src/app/components/Navigation.tsx`, `Footer.tsx`, `SplitHero.tsx`, `BentoGrid.tsx`, `TimelineTrack.tsx`, `ComparisonChart.tsx`, `StatCard.tsx`, `FloatingBadge.tsx`, `LogoTicker.tsx`
+- `src/app/components/ui/tabs.tsx`, `accordion.tsx`
+- `src/app/pages/Home.tsx`, `Platform.tsx`, `Solutions.tsx`, `Evidence.tsx`, `About.tsx`, `Contact.tsx`, `News.tsx`, `NewsArticle.tsx`, `ROICalculator.tsx`, `SchedulePilot.tsx`
+
+### Build status
+- `npm run build` passes clean (0 errors, 0 warnings besides chunk size)
+- CSS: 87.00 KB (down from 91.69 KB)
+
+### What to do next session
+- Visual QA: run dev server and inspect each page at all breakpoints
+- Delete unused components: GrainTexture.tsx, SectionDivider.tsx
+- If product images arrive: replace placeholders across Platform, Home

@@ -12,11 +12,6 @@ const partners = [
   "NIH / NIA / NIMH",
 ];
 
-/**
- * Horizontal scrolling ticker of partner names.
- * CSS-animated with gradient edge fades, pauses on hover.
- * Falls back to static layout when prefers-reduced-motion is set.
- */
 export function LogoTicker({
   variant = "light",
 }: {
@@ -24,12 +19,11 @@ export function LogoTicker({
 }) {
   const prefersReducedMotion = useReducedMotion();
 
-  const textColor = variant === "dark" ? "text-blue-200/80" : "text-gray-500";
-  const separatorColor = variant === "dark" ? "bg-blue-200/30" : "bg-gray-300";
-  const fadeFrom = variant === "dark" ? "from-[#0f1d3d]" : "from-white";
-  const fadeTo = variant === "dark" ? "to-[#0f1d3d]/0" : "to-white/0";
+  const textColor = variant === "dark" ? "text-[#A3A3A3]" : "text-[#737373]";
+  const separatorColor = variant === "dark" ? "bg-[#525252]" : "bg-[#D4D4D4]";
+  const fadeFrom = variant === "dark" ? "from-[#171717]" : "from-white";
+  const fadeTo = variant === "dark" ? "to-[#171717]/0" : "to-white/0";
 
-  // Static fallback for reduced motion
   if (prefersReducedMotion) {
     return (
       <div className={`flex flex-wrap justify-center items-center gap-x-8 gap-y-4 ${textColor} font-medium`}>
@@ -42,12 +36,10 @@ export function LogoTicker({
     );
   }
 
-  // Double the list so the scroll loops seamlessly
   const doubled = [...partners, ...partners];
 
   return (
     <div className="relative overflow-hidden group">
-      {/* Gradient edge fades */}
       <div className={`absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r ${fadeFrom} ${fadeTo} z-10 pointer-events-none`} />
       <div className={`absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l ${fadeFrom} ${fadeTo} z-10 pointer-events-none`} />
 
