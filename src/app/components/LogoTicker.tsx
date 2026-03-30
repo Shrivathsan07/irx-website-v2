@@ -19,10 +19,10 @@ export function LogoTicker({
 }) {
   const prefersReducedMotion = useReducedMotion();
 
-  const textColor = variant === "dark" ? "text-[#A3A3A3]" : "text-[#737373]";
-  const separatorColor = variant === "dark" ? "bg-[#525252]" : "bg-[#D4D4D4]";
-  const fadeFrom = variant === "dark" ? "from-[#171717]" : "from-white";
-  const fadeTo = variant === "dark" ? "to-[#171717]/0" : "to-white/0";
+  const textColor = variant === "dark" ? "text-[#B0C4DE]" : "text-[#737373]";
+  const separatorColor = variant === "dark" ? "bg-[#8BA3C4]" : "bg-[#D4D4D4]";
+  const fadeFrom = variant === "dark" ? "from-[#0F2B57]" : "from-white";
+  const fadeTo = variant === "dark" ? "to-[#0F2B57]/0" : "to-white/0";
 
   if (prefersReducedMotion) {
     return (

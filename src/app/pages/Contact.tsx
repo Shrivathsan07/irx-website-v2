@@ -183,7 +183,7 @@ export function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                    className="w-full bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(30,86,160,0.3),0_6px_20px_rgba(30,86,160,0.25)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.4),0_8px_28px_rgba(30,86,160,0.3)] transition-[background-color,box-shadow]"
                   >
                     Submit
                   </Button>
@@ -195,14 +195,14 @@ export function Contact() {
             <div className="space-y-6">
               <FadeUp delay={0.1}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-[#171717] mb-4">
+                  <h3 className="font-bold text-[#0F2B57] mb-4">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <Phone className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-[#171717]">
+                        <div className="text-sm font-medium text-[#0F2B57]">
                           Phone
                         </div>
                         <a
@@ -216,7 +216,7 @@ export function Contact() {
                     <div className="flex items-start gap-3">
                       <Mail className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-[#171717]">
+                        <div className="text-sm font-medium text-[#0F2B57]">
                           General Inquiries
                         </div>
                         <a
@@ -230,7 +230,7 @@ export function Contact() {
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-[#1E56A0] mt-0.5" />
                       <div>
-                        <div className="text-sm font-medium text-[#171717]">
+                        <div className="text-sm font-medium text-[#0F2B57]">
                           Address
                         </div>
                         <address className="text-sm text-[#737373] not-italic">
@@ -246,12 +246,12 @@ export function Contact() {
 
               <FadeUp delay={0.15}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-[#171717] mb-4">
+                  <h3 className="font-bold text-[#0F2B57] mb-4">
                     Direct Contacts
                   </h3>
                   <div className="space-y-4 text-sm">
                     <div>
-                      <div className="font-medium text-[#171717]">
+                      <div className="font-medium text-[#0F2B57]">
                         Sales &amp; Partnerships
                       </div>
                       <a
@@ -264,7 +264,7 @@ export function Contact() {
                       </a>
                     </div>
                     <div className="pt-3 border-t border-[#E5E5E5]">
-                      <div className="font-medium text-[#171717]">
+                      <div className="font-medium text-[#0F2B57]">
                         Management / Investment
                       </div>
                       <a
@@ -277,7 +277,7 @@ export function Contact() {
                       </a>
                     </div>
                     <div className="pt-3 border-t border-[#E5E5E5]">
-                      <div className="font-medium text-[#171717]">
+                      <div className="font-medium text-[#0F2B57]">
                         Operations / FDA
                       </div>
                       <a
@@ -295,7 +295,7 @@ export function Contact() {
 
               <FadeUp delay={0.2}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60" style={{ boxShadow: "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06)" }}>
-                  <h3 className="font-bold text-[#171717] mb-2">
+                  <h3 className="font-bold text-[#0F2B57] mb-2">
                     Business Hours
                   </h3>
                   <p className="text-sm text-[#737373]">
@@ -313,7 +313,7 @@ export function Contact() {
                   >
                     <div className="flex items-center gap-3">
                       <Shield className="w-5 h-5 text-[#1E56A0]" />
-                      <span className="font-medium text-[#171717] text-sm">
+                      <span className="font-medium text-[#0F2B57] text-sm">
                         Schedule a Pilot
                       </span>
                     </div>
@@ -325,7 +325,7 @@ export function Contact() {
                   >
                     <div className="flex items-center gap-3">
                       <TrendingUp className="w-5 h-5 text-[#0F2B57]" />
-                      <span className="font-medium text-[#171717] text-sm">
+                      <span className="font-medium text-[#0F2B57] text-sm">
                         Calculate Your ROI
                       </span>
                     </div>

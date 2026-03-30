@@ -421,7 +421,7 @@ export function About() {
                     </p>
                   )}
                   <h3
-                    className="text-xl font-bold text-[#171717] mb-3"
+                    className="text-xl font-bold text-[#0F2B57] mb-3"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {item.title}
@@ -487,7 +487,7 @@ export function About() {
                   <Factory className="w-6 h-6 text-[#0F2B57]" />
                 </div>
                 <h3
-                  className="text-xl font-bold text-[#171717] mb-6"
+                  className="text-xl font-bold text-[#0F2B57] mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Manufacturing
@@ -496,7 +496,7 @@ export function About() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2B57] mt-2.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-[#171717]">
+                      <span className="font-semibold text-[#0F2B57]">
                         Parallel Design Inc.
                       </span>
                       <span className="text-[#737373]"> (Wooster, OH)</span>
@@ -508,7 +508,7 @@ export function About() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2B57] mt-2.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-[#171717]">
+                      <span className="font-semibold text-[#0F2B57]">
                         LogiSync
                       </span>
                       <span className="text-[#737373]"> (Avon Lake, OH)</span>
@@ -533,7 +533,7 @@ export function About() {
                   <Code2 className="w-6 h-6 text-[#1E56A0]" />
                 </div>
                 <h3
-                  className="text-xl font-bold text-[#171717] mb-6"
+                  className="text-xl font-bold text-[#0F2B57] mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Development &amp; Support
@@ -542,7 +542,7 @@ export function About() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#1E56A0] mt-2.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-[#171717]">
+                      <span className="font-semibold text-[#0F2B57]">
                         InterSystems
                       </span>
                       <p className="text-[#737373] text-sm mt-1">
@@ -553,7 +553,7 @@ export function About() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#1E56A0] mt-2.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-[#171717]">
+                      <span className="font-semibold text-[#0F2B57]">
                         BioEnterprise
                       </span>
                       <p className="text-[#737373] text-sm mt-1">
@@ -564,7 +564,7 @@ export function About() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#1E56A0] mt-2.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-[#171717]">
+                      <span className="font-semibold text-[#0F2B57]">
                         MAGNET Incubator
                       </span>
                       <span className="text-[#737373]"> (Cleveland, OH)</span>
@@ -583,7 +583,7 @@ export function About() {
                   <GraduationCap className="w-5 h-5 text-[#0F2B57]" />
                 </div>
                 <h3
-                  className="text-xl font-bold text-[#171717]"
+                  className="text-xl font-bold text-[#0F2B57]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   University &amp; Research Collaborators
@@ -610,7 +610,7 @@ export function About() {
 
       {/* ═══ MARKET OPPORTUNITY — Dark Band ═══ */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#171717] to-[#0F2B57]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A38] via-[#0A1E3D] to-[#0F2B57]" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <p className="text-center text-sm font-semibold uppercase tracking-widest text-[#1E56A0] mb-4">
@@ -734,7 +734,7 @@ export function About() {
 
       {/* ═══ CTA ═══ */}
       <Section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#171717] to-[#0F2B57]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A38] via-[#0A1E3D] to-[#0F2B57]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
@@ -746,7 +746,7 @@ export function About() {
               <br />
               Can Do for <span className="text-[#1E56A0]">Your Team</span>
             </h2>
-            <p className="text-xl text-[#A3A3A3] mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#B0C4DE] mb-8 max-w-2xl mx-auto leading-relaxed">
               Schedule a pilot configured for your use case
             </p>
           </FadeUp>
@@ -756,7 +756,7 @@ export function About() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#1E56A0] hover:bg-[#163D7A] text-white text-lg px-8 py-6 shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.4),0_8px_28px_rgba(8,145,178,0.3)] transition-[background-color,box-shadow]"
+                className="bg-[#1E56A0] hover:bg-[#163D7A] text-white text-lg px-8 py-6 shadow-[0_1px_3px_rgba(30,86,160,0.3),0_6px_20px_rgba(30,86,160,0.25)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.4),0_8px_28px_rgba(30,86,160,0.3)] transition-[background-color,box-shadow]"
               >
                 <Link to="/schedule-pilot">
                   Schedule a Pilot

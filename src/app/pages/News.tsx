@@ -206,7 +206,7 @@ export function News() {
                     to={`/news/${item.slug}`}
                     className={`group block p-8 rounded-2xl border transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 ${
                       item.featured
-                        ? "bg-[#1E56A0]/5 border-[#1E56A0]/20 shadow-[0_1px_3px_rgba(8,145,178,0.06),0_4px_12px_rgba(8,145,178,0.08)] hover:shadow-[0_1px_3px_rgba(8,145,178,0.08),0_8px_20px_rgba(8,145,178,0.12)]"
+                        ? "bg-[#1E56A0]/5 border-[#1E56A0]/20 shadow-[0_1px_3px_rgba(30,86,160,0.06),0_4px_12px_rgba(30,86,160,0.08)] hover:shadow-[0_1px_3px_rgba(30,86,160,0.08),0_8px_20px_rgba(30,86,160,0.12)]"
                         : "bg-white border-[#E5E5E5]/60 shadow-[0_1px_3px_rgba(30,58,138,0.04),0_4px_12px_rgba(30,58,138,0.04)] hover:shadow-[0_1px_3px_rgba(30,58,138,0.06),0_8px_20px_rgba(30,58,138,0.08)]"
                     }`}
                   >
@@ -223,7 +223,7 @@ export function News() {
                       </div>
                       <h2
                         className={`text-xl font-bold mb-3 tracking-tight group-hover:text-[#1E56A0] transition-colors ${
-                          item.featured ? "text-[#0F2B57]" : "text-[#171717]"
+                          item.featured ? "text-[#0F2B57]" : "text-[#0F2B57]"
                         }`}
                       >
                         {item.title}
@@ -277,7 +277,7 @@ export function News() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(8,145,178,0.3),0_6px_20px_rgba(8,145,178,0.25)] transition-[background-color,box-shadow]"
+                className="bg-[#1E56A0] hover:bg-[#163D7A] text-white shadow-[0_1px_3px_rgba(30,86,160,0.3),0_6px_20px_rgba(30,86,160,0.25)] transition-[background-color,box-shadow]"
               >
                 <Link to="/schedule-pilot">
                   Schedule a Pilot

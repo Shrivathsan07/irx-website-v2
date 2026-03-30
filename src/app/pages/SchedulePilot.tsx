@@ -43,7 +43,7 @@ export function SchedulePilot() {
             <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-4">
               Get Started
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#171717] mb-3 tracking-[-0.02em]" style={{ fontFamily: "var(--font-display)" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#0F2B57] mb-3 tracking-[-0.02em]" style={{ fontFamily: "var(--font-display)" }}>
               Schedule a Pilot Program
             </h1>
             <p
@@ -71,7 +71,7 @@ export function SchedulePilot() {
                   onSubmit={handleSubmit(onSubmit)}
                   className="bg-white border border-[#E5E5E5]/60 rounded-2xl p-8 shadow-sm"
                 >
-                  <h2 className="text-2xl font-bold text-[#171717] mb-6 tracking-[-0.01em]">
+                  <h2 className="text-2xl font-bold text-[#0F2B57] mb-6 tracking-[-0.01em]">
                     Pilot Program Information
                   </h2>
 
@@ -186,7 +186,7 @@ export function SchedulePilot() {
             <div className="space-y-6">
               <FadeUp delay={0.1}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
-                  <h3 className="font-bold text-[#171717] mb-4">
+                  <h3 className="font-bold text-[#0F2B57] mb-4">
                     Why Pilot with iRxReminder?
                   </h3>
                   <div className="space-y-4">
@@ -198,7 +198,7 @@ export function SchedulePilot() {
                       <div key={item.label} className="flex items-start gap-3">
                         <item.icon className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: item.color }} />
                         <div>
-                          <div className="font-semibold text-[#171717] text-sm">
+                          <div className="font-semibold text-[#0F2B57] text-sm">
                             {item.label}
                           </div>
                           <div className="text-xs text-[#737373]">
@@ -213,7 +213,7 @@ export function SchedulePilot() {
 
               <FadeUp delay={0.15}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
-                  <h3 className="font-bold text-[#171717] mb-3">Trusted By</h3>
+                  <h3 className="font-bold text-[#0F2B57] mb-3">Trusted By</h3>
                   <div className="space-y-1.5 text-sm text-[#737373]">
                     {[
                       "Harvard University",
@@ -231,7 +231,7 @@ export function SchedulePilot() {
 
               <FadeUp delay={0.2}>
                 <div className="bg-[#FAFAFA] p-6 rounded-2xl border border-[#E5E5E5]/60 shadow-sm">
-                  <h3 className="font-bold text-[#171717] mb-2">Questions?</h3>
+                  <h3 className="font-bold text-[#0F2B57] mb-2">Questions?</h3>
                   <p className="text-sm text-[#737373] mb-3">
                     Our team is here to help
                   </p>

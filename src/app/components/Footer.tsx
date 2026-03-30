@@ -3,7 +3,7 @@ import { Linkedin, Shield, Award, FileCheck, GraduationCap } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-[#171717] text-[#A3A3A3]">
+    <footer className="bg-[#0F2B57] text-[#B0C4DE]">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Brand */}
@@ -12,21 +12,21 @@ export function Footer() {
               className="text-xl font-extrabold tracking-tight text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              iRx<span className="text-[#A3A3A3]">Reminder</span>
+              iRx<span className="text-[#B0C4DE]">Reminder</span>
             </span>
-            <p className="text-sm text-[#737373] mt-3 mb-4 leading-relaxed">
+            <p className="text-sm text-[#8BA3C4] mt-3 mb-4 leading-relaxed">
               Empowering patients and care teams to achieve high medication adherence.
             </p>
             <a
               href="https://www.linkedin.com/company/irxreminder-llc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[#737373] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+              className="inline-flex items-center gap-2 text-sm text-[#8BA3C4] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
-            <p className="text-xs text-[#525252] mt-3">Cleveland, OH</p>
+            <p className="text-xs text-[#7A9BC0] mt-3">Cleveland, OH</p>
           </div>
 
           {/* Column 2: Platform */}
@@ -45,7 +45,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+                    className="text-sm text-[#8BA3C4] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
                   >
                     {link.label}
                   </Link>
@@ -70,7 +70,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+                    className="text-sm text-[#8BA3C4] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
                   >
                     {link.label}
                   </Link>
@@ -95,7 +95,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#737373] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
+                    className="text-sm text-[#8BA3C4] hover:text-white transition-colors block py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm"
                   >
                     {link.label}
                   </Link>
@@ -113,7 +113,7 @@ export function Footer() {
             { icon: Award, text: "12 Patents" },
             { icon: FileCheck, text: "IRB-Approved Studies" },
           ].map((badge) => (
-            <span key={badge.text} className="flex items-center gap-2 text-xs text-[#525252]">
+            <span key={badge.text} className="flex items-center gap-2 text-xs text-[#7A9BC0]">
               <badge.icon className="w-4 h-4" strokeWidth={1.5} />
               {badge.text}
             </span>
@@ -121,8 +121,8 @@ export function Footer() {
         </div>
 
         {/* Divider + Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-[#262626]">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#525252]">
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7A9BC0]">
             <p>&copy; {new Date().getFullYear()} iRxReminder LLC &middot; Cleveland, OH</p>
             <div className="flex gap-6">
               <Link to="/contact" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm">

@@ -63,7 +63,7 @@ function PlatformVisual() {
           <div className="w-3 h-3 rounded-full bg-[#1E56A0]" />
           <div className="w-3 h-3 rounded-full bg-[#1E56A0]/50" />
           <div className="w-3 h-3 rounded-full bg-[#1E56A0]/25" />
-          <div className="ml-auto text-xs text-[#A3A3A3]/80 font-medium">
+          <div className="ml-auto text-xs text-[#B0C4DE]/80 font-medium">
             iRxControl Center
           </div>
         </div>
@@ -76,7 +76,7 @@ function PlatformVisual() {
               <Radio className="w-4 h-4 text-[#1E56A0]" />
             </div>
             <div className="text-sm font-semibold text-white mb-1">Pod</div>
-            <div className="text-xs text-[#A3A3A3]/80">IoT Device</div>
+            <div className="text-xs text-[#B0C4DE]/80">IoT Device</div>
             <div className="mt-3 flex gap-1">
               <div className="h-1.5 flex-1 rounded-full bg-green-400/60" />
               <div className="h-1.5 flex-1 rounded-full bg-green-400/40" />
@@ -90,7 +90,7 @@ function PlatformVisual() {
               <Smartphone className="w-4 h-4 text-[#1E56A0]" />
             </div>
             <div className="text-sm font-semibold text-white mb-1">App</div>
-            <div className="text-xs text-[#A3A3A3]/80">Patient</div>
+            <div className="text-xs text-[#B0C4DE]/80">Patient</div>
             <div className="mt-3 flex gap-1">
               <div className="h-1.5 flex-1 rounded-full bg-[#1E56A0]/60" />
               <div className="h-1.5 flex-1 rounded-full bg-[#1E56A0]/40" />
@@ -106,7 +106,7 @@ function PlatformVisual() {
             <div className="text-sm font-semibold text-white mb-1">
               Dashboard
             </div>
-            <div className="text-xs text-[#A3A3A3]/80">Provider</div>
+            <div className="text-xs text-[#B0C4DE]/80">Provider</div>
             <div className="mt-3 flex gap-1">
               <div className="h-1.5 flex-1 rounded-full bg-[#0F2B57]/80" />
               <div className="h-1.5 flex-1 rounded-full bg-[#0F2B57]/50" />
@@ -126,19 +126,19 @@ function PlatformVisual() {
         <div className="mt-5 grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-lg font-bold text-[#1E56A0]">83%</div>
-            <div className="text-[10px] text-[#A3A3A3]/80 uppercase tracking-wider">
+            <div className="text-[10px] text-[#B0C4DE]/80 uppercase tracking-wider">
               Adherence
             </div>
           </div>
           <div>
             <div className="text-lg font-bold text-white">Real-Time</div>
-            <div className="text-[10px] text-[#A3A3A3]/80 uppercase tracking-wider">
+            <div className="text-[10px] text-[#B0C4DE]/80 uppercase tracking-wider">
               Monitoring
             </div>
           </div>
           <div>
             <div className="text-lg font-bold text-[#1E56A0]">HIPAA</div>
-            <div className="text-[10px] text-[#A3A3A3]/80 uppercase tracking-wider">
+            <div className="text-[10px] text-[#B0C4DE]/80 uppercase tracking-wider">
               Compliant
             </div>
           </div>
@@ -296,7 +296,7 @@ export function Platform() {
                 }}
               >
                 <h3
-                  className="text-xl font-bold text-[#171717] mb-6"
+                  className="text-xl font-bold text-[#0F2B57] mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   LED Color System
@@ -327,7 +327,7 @@ export function Platform() {
                         className={`w-8 h-8 ${led.color} rounded-full flex-shrink-0 mt-0.5 ring-4 ${led.ring}`}
                       />
                       <div>
-                        <div className="font-semibold text-[#171717] text-sm">
+                        <div className="font-semibold text-[#0F2B57] text-sm">
                           {led.label}
                         </div>
                         <div className="text-sm text-[#737373]">{led.desc}</div>
@@ -354,7 +354,7 @@ export function Platform() {
                     "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)",
                 }}
               >
-                <h3 className="text-lg font-bold text-[#171717] mb-4">
+                <h3 className="text-lg font-bold text-[#0F2B57] mb-4">
                   Technical Specifications
                 </h3>
                 <Accordion type="multiple">
@@ -527,7 +527,7 @@ export function Platform() {
                   "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)",
               }}
             >
-              <h3 className="text-lg font-bold text-[#171717] mb-4">
+              <h3 className="text-lg font-bold text-[#0F2B57] mb-4">
                 App Details
               </h3>
               <Accordion type="multiple">
@@ -691,7 +691,7 @@ export function Platform() {
                   "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)",
               }}
             >
-              <h3 className="text-lg font-bold text-[#171717] mb-4">
+              <h3 className="text-lg font-bold text-[#0F2B57] mb-4">
                 Dashboard Capabilities
               </h3>
               <Accordion type="multiple">
@@ -813,7 +813,7 @@ export function Platform() {
                   <Radio className="w-8 h-8 text-[#0F2B57]" />
                 </div>
                 <h3
-                  className="text-lg font-bold text-[#171717] mb-2"
+                  className="text-lg font-bold text-[#0F2B57] mb-2"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   iLidRx Pod
@@ -845,7 +845,7 @@ export function Platform() {
                     <Smartphone className="w-7 h-7 text-[#1E56A0]" />
                   </div>
                   <h3
-                    className="text-lg font-bold text-[#171717] mb-2"
+                    className="text-lg font-bold text-[#0F2B57] mb-2"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     iRxCapture App
@@ -876,7 +876,7 @@ export function Platform() {
                   <Monitor className="w-8 h-8 text-[#0F2B57]" />
                 </div>
                 <h3
-                  className="text-lg font-bold text-[#171717] mb-2"
+                  className="text-lg font-bold text-[#0F2B57] mb-2"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   iRxControl Center
@@ -933,7 +933,7 @@ export function Platform() {
                 }}
               >
                 <h3
-                  className="font-bold text-[#171717] text-lg mb-6"
+                  className="font-bold text-[#0F2B57] text-lg mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Integration
@@ -966,7 +966,7 @@ export function Platform() {
                         <item.icon className="w-4 h-4 text-[#1E56A0]" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#171717] text-sm">
+                        <h4 className="font-semibold text-[#0F2B57] text-sm">
                           {item.title}
                         </h4>
                         <p className="text-sm text-[#737373]">{item.desc}</p>
@@ -986,7 +986,7 @@ export function Platform() {
                 }}
               >
                 <h3
-                  className="font-bold text-[#171717] text-lg mb-6"
+                  className="font-bold text-[#0F2B57] text-lg mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Security &amp; Compliance
@@ -1019,7 +1019,7 @@ export function Platform() {
                         <item.icon className="w-4 h-4 text-[#0F2B57]" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#171717] text-sm">
+                        <h4 className="font-semibold text-[#0F2B57] text-sm">
                           {item.title}
                         </h4>
                         <p className="text-sm text-[#737373]">{item.desc}</p>
@@ -1035,7 +1035,7 @@ export function Platform() {
           <div className="mt-16">
             <FadeUp>
               <h3
-                className="font-bold text-[#171717] text-xl mb-8 text-center"
+                className="font-bold text-[#0F2B57] text-xl mb-8 text-center"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Implementation Timeline
@@ -1332,7 +1332,7 @@ export function Platform() {
                         >
                           <feature.icon className="w-5 h-5" style={{ color: feature.color }} />
                         </div>
-                        <h3 className="text-lg font-bold text-[#171717] mb-3">{feature.title}</h3>
+                        <h3 className="text-lg font-bold text-[#0F2B57] mb-3">{feature.title}</h3>
                         <p className="text-[#404040] text-sm leading-relaxed">{feature.description}</p>
                       </div>
                     </FadeUp>
@@ -1369,7 +1369,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Key Capabilities</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Key Capabilities</h4>
                       <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                         {[
                           "AI models analyze dosing patterns to predict which patients are at risk of dropping off",
@@ -1415,7 +1415,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Escalation Workflow</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Escalation Workflow</h4>
                       <div className="space-y-4">
                         {[
                           { step: "1", label: "Patient Reminder", desc: "Context-aware nudge only when a dose is genuinely at risk of being missed" },
@@ -1428,7 +1428,7 @@ export function Platform() {
                               <span className="text-sm font-bold text-[#1E56A0]">{item.step}</span>
                             </div>
                             <div>
-                              <div className="font-semibold text-[#171717] text-sm">{item.label}</div>
+                              <div className="font-semibold text-[#0F2B57] text-sm">{item.label}</div>
                               <p className="text-sm text-[#737373]">{item.desc}</p>
                             </div>
                           </div>
@@ -1471,7 +1471,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Key Capabilities</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Key Capabilities</h4>
                       <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                         {[
                           "AI-enabled behavioral analysis detects early signs of medication withdrawal",
@@ -1520,7 +1520,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Key Capabilities</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Key Capabilities</h4>
                       <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                         {[
                           "HIPAA-safe coaching that reinforces adherence behavior",
@@ -1566,7 +1566,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Output Capabilities</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Output Capabilities</h4>
                       <div className="grid sm:grid-cols-3 gap-4">
                         {[
                           { icon: TrendingUp, label: "Retention Analytics", desc: "Track patient retention and adherence trends across cohorts" },
@@ -1577,7 +1577,7 @@ export function Platform() {
                             <div className="w-10 h-10 rounded-lg bg-[#1E56A0]/10 flex items-center justify-center mx-auto mb-3">
                               <item.icon className="w-5 h-5 text-[#1E56A0]" />
                             </div>
-                            <div className="font-semibold text-[#171717] text-sm mb-1">{item.label}</div>
+                            <div className="font-semibold text-[#0F2B57] text-sm mb-1">{item.label}</div>
                             <p className="text-xs text-[#737373]">{item.desc}</p>
                           </div>
                         ))}
@@ -1587,7 +1587,7 @@ export function Platform() {
                       className="bg-white p-7 rounded-2xl border border-[#E5E5E5]/60"
                       style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08)" }}
                     >
-                      <h4 className="font-bold text-[#171717] mb-4">Key Metrics Tracked</h4>
+                      <h4 className="font-bold text-[#0F2B57] mb-4">Key Metrics Tracked</h4>
                       <ul className="text-[#404040] space-y-2.5 leading-relaxed">
                         {[
                           "Medication adherence rates by patient, cohort, and facility",

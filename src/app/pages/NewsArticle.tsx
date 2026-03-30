@@ -54,7 +54,7 @@ export function NewsArticle() {
             </div>
 
             <h1
-              className="text-3xl md:text-5xl font-bold text-[#171717] tracking-[-0.02em] leading-tight"
+              className="text-3xl md:text-5xl font-bold text-[#0F2B57] tracking-[-0.02em] leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {article.title}
@@ -84,7 +84,7 @@ export function NewsArticle() {
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
             <FadeUp>
               <h2
-                className="text-2xl md:text-3xl font-bold text-[#171717] mb-8 tracking-[-0.01em]"
+                className="text-2xl md:text-3xl font-bold text-[#0F2B57] mb-8 tracking-[-0.01em]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Related Articles
@@ -105,7 +105,7 @@ export function NewsArticle() {
                         {categoryLabels[item.category]}
                       </span>
                     </div>
-                    <h3 className="font-bold text-[#171717] group-hover:text-[#1E56A0] transition-colors mb-2">
+                    <h3 className="font-bold text-[#0F2B57] group-hover:text-[#1E56A0] transition-colors mb-2">
                       {item.title}
                     </h3>
                     <span className="inline-flex items-center text-[#1E56A0] font-semibold text-sm gap-2 group-hover:gap-3 transition-[gap]">

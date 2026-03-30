@@ -151,7 +151,7 @@ export function Navigation() {
                       exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
                       onMouseLeave={() => setIsSolutionsOpen(false)}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[360px] bg-white rounded-xl shadow-xl shadow-[#171717]/10 border border-[#E5E5E5]/60 p-2 z-50"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[360px] bg-white rounded-xl shadow-xl shadow-[#0F2B57]/10 border border-[#E5E5E5]/60 p-2 z-50"
                     >
                       {solutionItems.map((item) => (
                         <Link
@@ -163,7 +163,7 @@ export function Navigation() {
                             <item.icon className="w-5 h-5 text-[#1E56A0]" strokeWidth={1.5} />
                           </div>
                           <div>
-                            <p className="text-sm font-semibold text-[#171717] group-hover:text-[#1E56A0] transition-colors">
+                            <p className="text-sm font-semibold text-[#0F2B57] group-hover:text-[#1E56A0] transition-colors">
                               {item.title}
                             </p>
                             <p className="text-xs text-[#737373] mt-0.5 leading-relaxed">
@@ -202,7 +202,7 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-[#404040] hover:text-[#171717] rounded-lg hover:bg-[#F5F5F5] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 focus-visible:ring-offset-2"
+              className="lg:hidden p-2 text-[#404040] hover:text-[#0F2B57] rounded-lg hover:bg-[#F5F5F5] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 focus-visible:ring-offset-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
@@ -230,7 +230,7 @@ export function Navigation() {
                 <Link
                   to="/platform"
                   className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
-                    isActive("/platform") ? "text-[#1E56A0]" : "text-[#171717]"
+                    isActive("/platform") ? "text-[#1E56A0]" : "text-[#0F2B57]"
                   }`}
                   style={{ fontFamily: "var(--font-display)" }}
                 >
@@ -242,7 +242,7 @@ export function Navigation() {
                   <button
                     onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
                     className={`flex items-center justify-between w-full py-3 text-2xl font-semibold ${
-                      isSolutionsActive ? "text-[#1E56A0]" : "text-[#171717]"
+                      isSolutionsActive ? "text-[#1E56A0]" : "text-[#0F2B57]"
                     }`}
                     style={{ fontFamily: "var(--font-display)" }}
                   >
@@ -278,7 +278,7 @@ export function Navigation() {
                 <Link
                   to="/evidence"
                   className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
-                    isActive("/evidence") ? "text-[#1E56A0]" : "text-[#171717]"
+                    isActive("/evidence") ? "text-[#1E56A0]" : "text-[#0F2B57]"
                   }`}
                   style={{ fontFamily: "var(--font-display)" }}
                 >
@@ -288,7 +288,7 @@ export function Navigation() {
                 <Link
                   to="/about"
                   className={`block py-3 border-b border-[#F5F5F5] text-2xl font-semibold ${
-                    isActive("/about") ? "text-[#1E56A0]" : "text-[#171717]"
+                    isActive("/about") ? "text-[#1E56A0]" : "text-[#0F2B57]"
                   }`}
                   style={{ fontFamily: "var(--font-display)" }}
                 >

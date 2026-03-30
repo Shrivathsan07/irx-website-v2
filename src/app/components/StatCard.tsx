@@ -41,7 +41,7 @@ export function StatCard({
       />
       <div
         className={`text-xs font-semibold uppercase tracking-wider mb-2 ${
-          isGlass ? "text-[#A3A3A3]" : "text-[#737373]"
+          isGlass ? "text-[#B0C4DE]" : "text-[#737373]"
         }`}
       >
         {label}

@@ -5,7 +5,6 @@ import {
   TrendingUp,
   DollarSign,
   ArrowRight,
-  Lock,
   CheckCircle2,
   Settings,
   Mail,
@@ -18,6 +17,16 @@ import { motion } from "motion/react";
 import { FadeUp } from "@/app/components/animations";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 import { FloatingBadgeGroup } from "@/app/components/FloatingBadge";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat("en-US", {
@@ -93,7 +102,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
               ROI Calculator
             </p>
             <h1
-              className="text-4xl md:text-5xl font-bold text-[#171717] mb-3 tracking-[-0.02em]"
+              className="text-4xl md:text-5xl font-bold text-[#0F2B57] mb-3 tracking-[-0.02em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Your Path to Reimbursable Remote Care
@@ -116,12 +125,12 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
       <section className="py-16 -mt-12">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <FadeUp>
-            <div className="bg-white rounded-2xl p-8 md:p-12 border border-[#E5E5E5]/60 shadow-lg shadow-[#171717]/5">
+            <div className="bg-white rounded-2xl p-8 md:p-12 border border-[#E5E5E5]/60 shadow-lg shadow-[#0F2B57]/5">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Left: Input Controls */}
                 <div>
                   <h2
-                    className="text-2xl font-bold text-[#171717] mb-8 tracking-[-0.01em]"
+                    className="text-2xl font-bold text-[#0F2B57] mb-8 tracking-[-0.01em]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     Adjust Your Parameters
@@ -254,7 +263,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                 {/* Right: Live Results */}
                 <div className="flex flex-col">
                   {/* Hero stat — Net Profit */}
-                  <div className="relative rounded-2xl p-8 overflow-hidden mb-6 bg-[#171717]">
+                  <div className="relative rounded-2xl p-8 overflow-hidden mb-6 bg-[#0F2B57]">
                     <div className="relative">
                       <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#B3CCFF] mb-2">
                         Projected Net Profit
@@ -265,7 +274,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                       >
                         {formatCurrency(netProfit)}
                       </p>
-                      <p className="text-sm text-[#A3A3A3]">
+                      <p className="text-sm text-[#B0C4DE]">
                         over {duration} month{duration > 1 ? "s" : ""} &middot; {patientCount.toLocaleString()} patients
                       </p>
                     </div>
@@ -314,6 +323,56 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                     </div>
                   </div>
 
+                  {/* Revenue vs Cost Chart */}
+                  <div className="mt-6 bg-[#FAFAFA] rounded-xl border border-[#E5E5E5]/60 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-4">
+                      Revenue vs. Cost Breakdown
+                    </p>
+                    <ResponsiveContainer width="100%" height={180}>
+                      <BarChart
+                        data={[
+                          { name: "Revenue", value: totalRevenue, fill: "#1E56A0" },
+                          { name: "Cost", value: totalCost, fill: "#D4D4D4" },
+                          { name: "Net Profit", value: Math.max(netProfit, 0), fill: "#10B981" },
+                        ]}
+                        margin={{ top: 5, right: 10, left: 10, bottom: 5 }}
+                        barSize={40}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" vertical={false} />
+                        <XAxis
+                          dataKey="name"
+                          tick={{ fontSize: 12, fill: "#737373" }}
+                          axisLine={false}
+                          tickLine={false}
+                        />
+                        <YAxis
+                          tick={{ fontSize: 11, fill: "#737373" }}
+                          axisLine={false}
+                          tickLine={false}
+                          tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`}
+                        />
+                        <Tooltip
+                          formatter={(value: number) => [formatCurrency(value), ""]}
+                          contentStyle={{
+                            backgroundColor: "#fff",
+                            border: "1px solid #E5E5E5",
+                            borderRadius: "8px",
+                            fontSize: "13px",
+                          }}
+                        />
+                        <Bar dataKey="value" radius={[6, 6, 0, 0]}>
+                          {[
+                            { fill: "#1E56A0" },
+                            { fill: "#D4D4D4" },
+                            { fill: "#10B981" },
+                          ].map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+
                   {/* Trust badges */}
                   <div className="mt-6">
                     <FloatingBadgeGroup
@@ -357,7 +416,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <FadeUp>
             <h2
-              className="text-3xl font-bold text-[#171717] mb-10 text-center tracking-[-0.01em]"
+              className="text-3xl font-bold text-[#0F2B57] mb-10 text-center tracking-[-0.01em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Why Health Systems Choose iRxReminder
@@ -396,7 +455,7 @@ Schedule a pilot: https://irxreminder.com/schedule-pilot
                       style={{ color: item.color }}
                     />
                   </div>
-                  <h3 className="font-bold text-[#171717] mb-2">
+                  <h3 className="font-bold text-[#0F2B57] mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-[#737373] leading-relaxed">
