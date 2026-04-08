@@ -50,7 +50,7 @@ const leaders = [
     name: "William Yuan",
     title: "Chief Strategy Officer",
     bio: "Former CEO of nGloballink. Led early-stage company from inception to $310M public company. Track record of 100x ROI exits. Drives strategic growth and market expansion.",
-    image: "/images/team/william-yuan.jpg",
+    image: "/images/team/william-yuan-bluegray.jpg",
   },
   {
     name: "Larry Tusick",
@@ -325,7 +325,7 @@ export function About() {
           <FadeUp delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
               <div
-                className="lg:col-span-3 relative bg-white p-8 md:p-12 rounded-2xl border border-[#0F2B57]/10"
+                className="lg:col-span-2 relative bg-white p-8 md:p-12 rounded-2xl border border-[#0F2B57]/10"
                 style={{
                   boxShadow:
                     "0 1px 3px rgba(30,58,138,0.04), 0 4px 12px rgba(30,58,138,0.06), 0 16px 40px rgba(30,58,138,0.06)",
@@ -354,7 +354,7 @@ export function About() {
                   </p>
                 </div>
               </div>
-              <div className="lg:col-span-2 rounded-2xl overflow-hidden border border-[#E5E5E5]/60 shadow-sm shadow-[#1E56A0]/5">
+              <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-[#E5E5E5]/60 shadow-sm shadow-[#1E56A0]/5">
                 <img
                   src="/images/team/tony-joel-pod.png"
                   alt="Tony Sterns and Joel Hughes examining the iLidRx pod at a conference table — collaborative product development"

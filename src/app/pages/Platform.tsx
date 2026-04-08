@@ -1629,7 +1629,7 @@ export function Platform() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-[#0F2B57]/20 bg-white hover:border-[#0F2B57]/40 hover:bg-[#FAFAFA] text-[#0F2B57] transition-colors"
+                className="border-[#0F2B57]/40 bg-white hover:border-[#0F2B57]/60 hover:bg-[#F5F5F5] text-[#0F2B57] font-semibold transition-colors"
               >
                 <Link to="/roi-calculator">Calculate Your ROI</Link>
               </Button>

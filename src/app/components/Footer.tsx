@@ -8,12 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Brand */}
           <div>
-            <span
-              className="text-xl font-extrabold tracking-tight text-white"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              iRx<span className="text-[#B0C4DE]">Reminder</span>
-            </span>
+            <Link to="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E56A0]/40 rounded-sm">
+              <img
+                src="/images/logo/new-irx-logo.png"
+                alt="iRxReminder"
+                className="h-10 w-auto rounded-lg brightness-0 invert"
+              />
+            </Link>
             <p className="text-sm text-[#8BA3C4] mt-3 mb-4 leading-relaxed">
               Empowering patients and care teams to achieve high medication adherence.
             </p>

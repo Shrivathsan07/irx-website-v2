@@ -104,13 +104,17 @@ export function Navigation() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className={`flex justify-between items-center transition-[height] duration-300 ${isShrunk ? "h-14" : "h-16"}`}>
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center gap-2">
+              <img
+                src="/images/logo/new-irx-logo.png"
+                alt="iRxReminder"
+                className={`transition-[height] duration-300 ${isShrunk ? "h-8" : "h-10"} rounded-lg`}
+              />
               <span
-                className="text-xl font-extrabold tracking-tight"
+                className="text-lg font-extrabold tracking-tight text-[#0F2B57] hidden sm:inline"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="text-[#0F2B57]">iRx</span>
-                <span className="text-[#404040]">Reminder</span>
+                iRx<span className="text-[#1E56A0]">Reminder</span>
               </span>
             </Link>
 

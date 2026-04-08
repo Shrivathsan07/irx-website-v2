@@ -112,7 +112,7 @@ export function SplitHero({
                     variant="outline"
                     className={
                       isDark
-                        ? "border-white/30 hover:border-white hover:bg-white/10 text-white text-lg px-8 py-6 transition-colors"
+                        ? "border-white/60 bg-white/10 hover:border-white hover:bg-white/20 text-white text-lg px-8 py-6 transition-colors"
                         : "border-[#1E56A0]/20 text-[#1E56A0] hover:bg-[#1E56A0] hover:text-white text-lg px-8 py-6 transition-colors"
                     }
                   >
