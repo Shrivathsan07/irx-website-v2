@@ -191,6 +191,18 @@ export function Evidence() {
             </div>
           </FadeUp>
 
+          {/* Clinical research banner */}
+          <FadeUp delay={0.12}>
+            <div className="mb-16 rounded-2xl overflow-hidden border border-[#E5E5E5]/60 shadow-sm shadow-[#1E56A0]/5">
+              <img
+                src="/images/banners/irx_banner_research.jpg"
+                alt="Two clinicians in scrubs examining the iLidRx pod in a hospital hallway — clinical research setting"
+                className="w-full object-cover max-h-[320px]"
+                loading="lazy"
+              />
+            </div>
+          </FadeUp>
+
           {/* Why Existing Solutions Fail */}
           <FadeUp delay={0.15}>
             <h3 className="text-3xl font-bold text-[#0F2B57] mb-8 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>

@@ -199,3 +199,67 @@ Complete visual rebuild following `iRx_Website_Redesign_Full_UI_Spec.md` — mig
 - If product images arrive: replace placeholders
 - If FDA 510(k) is granted: update all "Pathway" → "Cleared" references
 - Consider code-splitting to reduce main chunk size
+
+---
+
+## 2026-04-08 — Session 5: Product Image Integration
+
+### What was done
+
+**1. Extracted and organized 33 image assets**
+- Extracted `iRx Website Components` zip to organized directories under `public/images/`
+- Subdirectories: `banners/` (3), `product/` (4), `how-it-works/` (7), `app/` (8), `clinical/` (4), `comparison/` (1), `team/` (1 added)
+- Clean, web-friendly filenames (lowercase, no spaces)
+
+**2. Home page — replaced 3 placeholder sections with real images**
+- **Hero visual**: Replaced mock dashboard card with `with-phone.jpg` (pod + smartphone showing 95% adherence)
+- **How It Works**: Replaced icon-based 4-step timeline with real pod step images (`1-filling-pod`, `3-place-pod`, `6-tilt-pod`, `7-pill-dispensed`) in a responsive grid
+- **Use Cases tabs**: Replaced dashed-border placeholder boxes with contextual images per tab (adherence screen, research banner, front product shot, home banner)
+
+**3. Platform page — added product images to 4 sections**
+- **Hero visual**: Replaced mock dashboard card (PlatformVisual) with `with-phone.jpg`
+- **Pod section**: Added `frontIsolated.jpg` in a 2-column layout alongside intro text
+- **App section**: Added 3 app screenshots (adherence, reminder, drug detail) in a grid gallery
+- **Dashboard section**: Added `control-center.png` screenshot
+- **Comparison section**: Added `pod-vs-pillbox.jpg` with caption above comparison table
+
+**4. Solutions page — replaced hero visual**
+- Replaced UseCaseVisual mock card (list of use cases) with `irx_banner_care.jpg` (doctor showing pod to patient couple)
+
+**5. Evidence page — added research banner**
+- Added `irx_banner_research.jpg` (clinicians in hospital hallway) to "The Crisis" section
+
+**6. About page — added team collaboration photo**
+- Added `tony-joel-pod.png` alongside the origin story text in a 3/5 + 2/5 grid layout
+
+### Files changed (4 modified)
+- `src/app/pages/Home.tsx` — Hero visual, How It Works images, Use Cases images
+- `src/app/pages/Platform.tsx` — Hero, Pod, App, Dashboard, Comparison images
+- `src/app/pages/Solutions.tsx` — Hero visual replaced with banner
+- `src/app/pages/Evidence.tsx` — Research banner added
+- `src/app/pages/About.tsx` — Team photo added to origin story
+
+### New files (33 images)
+- `public/images/banners/` — irx_banner_home-1.jpg, irx_banner_care.jpg, irx_banner_research.jpg
+- `public/images/product/` — frontIsolated.jpg, BackIsolated.jpg, with-phone.jpg, with-phone-light-off.jpg
+- `public/images/how-it-works/` — 1-filling-pod.png through 7-pill-dispensed.png
+- `public/images/app/` — adherence-screen.png, reminder-screen.png, reminder-sms.png, drug-detail.png, in-window-med.png, out-window-med.png, calendar-view.png, pill-dispensed.png
+- `public/images/clinical/` — pharmacist-filling.png, pharmacist-capping.png, control-center.png, dashboard.png
+- `public/images/comparison/` — pod-vs-pillbox.jpg
+- `public/images/team/tony-joel-pod.png`
+
+### Build status
+- `npm run build` passes clean (0 errors)
+- JS: 1,166 KB (gzip 336 KB), CSS: 82 KB (gzip 13 KB)
+
+### Known issues
+- Product images are large (4-8 MB each for `with-phone.jpg`, `frontIsolated.jpg`, `BackIsolated.jpg`) — consider optimizing with WebP/AVIF
+- `New_iRx_Logo.png` was not in the zip — brand logo still uses text in navigation
+- Josh Smith still has no photo (known blocker)
+
+### What to do next session
+- Visual QA at all breakpoints (mobile, tablet, desktop)
+- Optimize large product images (compress or convert to WebP)
+- If FDA 510(k) is granted: update all "Pathway" → "Cleared" references
+- If brand logo SVG provided: update Navigation + Footer
+- Consider code-splitting to reduce main chunk size
