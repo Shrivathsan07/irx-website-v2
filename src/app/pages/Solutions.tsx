@@ -33,79 +33,13 @@ import { useSectionObserver } from "@/app/hooks/useSectionObserver";
 function UseCaseVisual() {
   return (
     <div className="relative">
-      <div
-        className="bg-white rounded-2xl border border-[#E5E5E5] p-6 md:p-8"
-        style={{
-          boxShadow:
-            "0 1px 3px rgba(30,86,160,0.04), 0 4px 12px rgba(30,86,160,0.08), 0 16px 40px rgba(15,43,87,0.10)",
-        }}
-      >
-        <div className="text-xs font-semibold uppercase tracking-widest text-[#737373] mb-5">
-          Configured For
-        </div>
-        <div className="space-y-3">
-          {[
-            {
-              icon: FlaskConical,
-              label: "Clinical Research",
-              color: "#0F2B57",
-              stat: "25% fewer dropouts",
-            },
-            {
-              icon: Activity,
-              label: "Behavioral Health",
-              color: "#1E56A0",
-              stat: "83% adherence",
-            },
-            {
-              icon: Pill,
-              label: "Pharmacies",
-              color: "#1E56A0",
-              stat: "90-day retention",
-            },
-            {
-              icon: Building2,
-              label: "Health Systems",
-              color: "#0F2B57",
-              stat: "3x cost recovery",
-            },
-            {
-              icon: Heart,
-              label: "Senior Living",
-              color: "#1E56A0",
-              stat: "Zero sorting errors",
-            },
-            {
-              icon: BarChart3,
-              label: "Health Plans",
-              color: "#0F2B57",
-              stat: "Verified data",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-4 p-3 rounded-xl bg-[#FAFAFA] border border-[#E5E5E5]/60"
-            >
-              <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: `${item.color}10` }}
-              >
-                <item.icon className="w-4 h-4" style={{ color: item.color }} />
-              </div>
-              <div className="flex-1">
-                <div className="text-sm font-semibold text-[#0F2B57]">
-                  {item.label}
-                </div>
-              </div>
-              <div
-                className="text-xs font-bold"
-                style={{ color: item.color }}
-              >
-                {item.stat}
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="rounded-2xl overflow-hidden border border-[#E5E5E5] shadow-lg shadow-[#1E56A0]/10">
+        <img
+          src="/images/banners/irx_banner_care.jpg"
+          alt="Doctor showing the iLidRx smart medication pod to a patient couple in a clinical care setting"
+          className="w-full object-cover"
+          loading="eager"
+        />
       </div>
     </div>
   );

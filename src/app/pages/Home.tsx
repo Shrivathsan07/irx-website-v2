@@ -38,43 +38,14 @@ function HeroVisual() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="relative"
       >
-        {/* Dashboard card */}
-        <div className="bg-white rounded-2xl border border-[#E5E5E5]/60 p-6 shadow-lg shadow-[#1E56A0]/5">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-3 h-3 rounded-full bg-[#10B981]" />
-            <div className="w-3 h-3 rounded-full bg-amber-400" />
-            <div className="w-3 h-3 rounded-full bg-red-400" />
-            <div className="ml-auto text-xs text-[#737373] font-mono">iRxControl Center</div>
-          </div>
-          <div className="grid grid-cols-3 gap-3 mb-4">
-            {[
-              { label: "Adherence", value: "83%", color: "#1E56A0" },
-              { label: "Patients", value: "247", color: "#0F2B57" },
-              { label: "Alerts", value: "3", color: "#f59e0b" },
-            ].map((s) => (
-              <div key={s.label} className="bg-[#FAFAFA] rounded-lg p-3 text-center border border-[#E5E5E5]/40">
-                <div className="text-lg font-bold" style={{ color: s.color }}>{s.value}</div>
-                <div className="text-[10px] text-[#737373] uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
-          </div>
-          <div className="space-y-2">
-            {[85, 72, 91, 68, 88].map((w, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <div className="w-16 text-[10px] text-[#737373] truncate">Patient {i + 1}</div>
-                <div className="flex-1 h-2 bg-[#F5F5F5] rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${w}%`,
-                      background: w > 80 ? "#1E56A0" : w > 70 ? "#f59e0b" : "#ef4444",
-                    }}
-                  />
-                </div>
-                <div className="w-8 text-[10px] text-[#404040] text-right">{w}%</div>
-              </div>
-            ))}
-          </div>
+        {/* Product image — pod with phone showing dashboard */}
+        <div className="rounded-2xl overflow-hidden shadow-lg shadow-[#1E56A0]/10 border border-[#E5E5E5]/60 bg-white">
+          <img
+            src="/images/product/with-phone.jpg"
+            alt="iLidRx smart medication pod alongside smartphone showing 95% adherence dashboard"
+            className="w-full object-cover"
+            loading="eager"
+          />
         </div>
 
         {/* Floating pod notification */}
@@ -272,32 +243,33 @@ export function Home() {
             </h2>
           </FadeUp>
 
-          {/* Timeline */}
-          <div className="relative mt-16">
-            {/* Desktop connecting line */}
-            <div className="hidden md:block absolute top-7 left-[12.5%] right-[12.5%] h-[2px] bg-[#D9E5FF]" />
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-0">
+          {/* Pod Usage Steps — Real Product Images */}
+          <div className="mt-16">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
-                { icon: Pill, title: "Pharmacy Fills", desc: "The pharmacist loads and programs the iLidRx pod. No patient sorting. No errors." },
-                { icon: Hand, title: "Smart Dispensing", desc: "Hold, Place, Tilt\u2122. The dosing window dispenses the right pills at the right time. Overdose? Physically impossible." },
-                { icon: BellRing, title: "Intelligent Alerts", desc: "Alerts trigger ONLY when you forget. Phone, watch, TV, or caregiver — your choice." },
-                { icon: Activity, title: "Real-Time Monitoring", desc: "Healthcare teams see adherence data instantly. Intervene early. Prevent crises." },
+                { img: "/images/how-it-works/1-filling-pod.png", title: "Pharmacy Fills", desc: "The pharmacist loads and programs the iLidRx pod. No patient sorting." },
+                { img: "/images/how-it-works/3-place-pod.png", title: "Place on Base", desc: "Pod snaps onto its inductive charging base. Always ready." },
+                { img: "/images/how-it-works/6-tilt-pod.png", title: "Tilt to Dispense", desc: "Hold, Place, Tilt\u2122. One dose at a time. Overdose? Physically impossible." },
+                { img: "/images/how-it-works/7-pill-dispensed.png", title: "Dose Recorded", desc: "Medication dispensed and logged automatically. Care team sees it in real time." },
               ].map((step, i) => (
-                <FadeUp key={step.title} delay={0.1 + i * 0.15} className="text-center relative">
-                  {/* Number circle */}
-                  <div className="w-14 h-14 rounded-full bg-[#1E56A0] text-white font-bold text-xl flex items-center justify-center mx-auto relative z-10" style={{ fontFamily: "var(--font-display)" }}>
-                    {i + 1}
+                <FadeUp key={step.title} delay={0.1 + i * 0.1} className="text-center">
+                  <div className="relative mb-4">
+                    <div className="absolute -top-3 -left-1 w-8 h-8 rounded-full bg-[#1E56A0] text-white font-bold text-sm flex items-center justify-center z-10" style={{ fontFamily: "var(--font-display)" }}>
+                      {i + 1}
+                    </div>
+                    <div className="bg-white rounded-2xl border border-[#E5E5E5]/60 overflow-hidden shadow-sm shadow-[#1E56A0]/5">
+                      <img
+                        src={step.img}
+                        alt={step.title}
+                        className="w-full aspect-square object-cover"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
-                  {/* Icon */}
-                  <div className="mt-6">
-                    <step.icon className="w-8 h-8 text-[#1E56A0] mx-auto" strokeWidth={1.5} />
-                  </div>
-                  {/* Text */}
-                  <h3 className="mt-4 font-semibold text-lg text-[#0F2B57]" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="font-semibold text-base text-[#0F2B57]" style={{ fontFamily: "var(--font-display)" }}>
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[#737373] max-w-[200px] mx-auto leading-relaxed">
+                  <p className="mt-1 text-sm text-[#737373] max-w-[220px] mx-auto leading-relaxed">
                     {step.desc}
                   </p>
                 </FadeUp>
@@ -584,6 +556,8 @@ export function Home() {
                   { value: "\u2191 Revenue", label: "Via med reviews" },
                 ],
                 cta: { label: "Learn More About Mental Health Solutions", to: "/solutions#mental-health" },
+                img: "/images/app/adherence-screen.png",
+                imgAlt: "iRxReminder adherence dashboard showing 75% total adherence with per-medication breakdown",
               },
               {
                 eyebrow: "For Researchers",
@@ -596,6 +570,8 @@ export function Home() {
                   { value: "NIH-funded", label: "Validation" },
                 ],
                 cta: { label: "Learn More About Research Solutions", to: "/solutions#research" },
+                img: "/images/banners/irx_banner_research.jpg",
+                imgAlt: "Two clinicians in a hospital hallway with the iLidRx pod — clinical research setting",
               },
               {
                 eyebrow: "For Pharma Companies",
@@ -608,6 +584,8 @@ export function Home() {
                   { value: "12", label: "Patents" },
                 ],
                 cta: { label: "Learn More About Pharma Solutions", to: "/solutions#pharma" },
+                img: "/images/product/frontIsolated.jpg",
+                imgAlt: "iLidRx smart medication pod — front view with green LED indicator",
               },
               {
                 eyebrow: "For Home Health",
@@ -620,6 +598,8 @@ export function Home() {
                   { value: "Connected", label: "Caregivers" },
                 ],
                 cta: { label: "Learn More About Aging in Place", to: "/solutions#aging" },
+                img: "/images/banners/irx_banner_home-1.jpg",
+                imgAlt: "iLidRx pod on a kitchen counter with an elderly couple in the background — home health setting",
               },
             ].map(
               (content, idx) =>
@@ -666,9 +646,16 @@ export function Home() {
                       </Link>
                     </div>
 
-                    {/* Placeholder visual */}
-                    <div className="hidden lg:flex items-center justify-center rounded-2xl border-2 border-dashed border-[#E5E5E5] bg-white">
-                      <p className="text-sm text-[#A3A3A3]">Dashboard view — {content.eyebrow.replace("For ", "").toLowerCase()}</p>
+                    {/* Use-case visual */}
+                    <div className="hidden lg:flex items-center justify-center">
+                      <div className="rounded-2xl overflow-hidden border border-[#E5E5E5]/60 bg-white shadow-sm shadow-[#1E56A0]/5">
+                        <img
+                          src={content.img}
+                          alt={content.imgAlt}
+                          className="w-full h-full object-cover max-h-[400px]"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                   </motion.div>
                 )
