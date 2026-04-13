@@ -91,17 +91,22 @@ export function Home() {
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.05em] text-[#1E56A0] mb-4">
-                  Medication Adherence Platform
+                  AI Clinical Intelligence Platform
                 </p>
                 <h1
                   className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] font-bold text-[#0F2B57] leading-[1.1] tracking-[-0.02em] mb-5"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  80%+ Medication Adherence. Clinically Proven.
+                  Saving Lives. Reducing{" "}
+                  <br className="hidden sm:block" />
+                  Healthcare Costs.
                 </h1>
+                <p className="text-lg font-semibold text-[#1E56A0] tracking-wide mb-3">
+                  Connect. Monitor. Interact.
+                </p>
                 <p className="text-xl text-[#737373] leading-relaxed max-w-lg">
-                  iRxReminder combines IoT dispensing control, smart alerting, and real-time
-                  monitoring to eliminate dosing errors — validated through NIH-funded clinical studies.
+                  AI digital health technologies empowering patients to achieve and thrive
+                  in independence — improving medication adherence from 48% to over 80%.
                 </p>
               </motion.div>
 
